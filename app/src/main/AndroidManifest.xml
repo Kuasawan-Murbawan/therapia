@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Therapia"
         tools:targetApi="31">
         <activity
+            android:name=".CustomerProfile"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
