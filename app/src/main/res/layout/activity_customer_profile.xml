@@ -264,4 +264,121 @@
 
     </GridLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="#80A28F"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp">
+
+            <ImageView
+                android:id="@+id/home_icon_navbar"
+                android:layout_width="69dp"
+                android:layout_height="64dp"
+                android:src="@drawable/home_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/home_icon_navbar"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp">
+
+            <ImageView
+                android:id="@+id/chat_icon_navbar"
+                android:layout_width="69dp"
+                android:layout_height="64dp"
+                android:src="@drawable/chat_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/chat_icon_navbar"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/booking_icon_navbar"
+                android:layout_width="54dp"
+                android:layout_height="64dp"
+                android:src="@drawable/booking_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/booking_icon_navbar"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/activity_icon_navbar"
+                android:layout_width="69dp"
+                android:layout_height="64dp"
+                android:src="@drawable/activity_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/activity_icon_navbar"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/profile_icon_navbar"
+                android:layout_width="69dp"
+                android:layout_height="64dp"
+                android:src="@drawable/profile_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/profile_icon_navbar"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
