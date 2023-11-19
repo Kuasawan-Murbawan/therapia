@@ -5,39 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CustomerProfile"
-    android:background="#fafafc">
+    android:background="#EFEFF6">
 
     <RelativeLayout
         android:id="@+id/header_layout"
         android:layout_width="match_parent"
-        android:layout_height="250px">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/back_icon"
             android:src="@drawable/back_arrow"
-            android:layout_width="200px"
-            android:layout_height="200px"
-            android:layout_marginTop="20px"
-        />
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            />
 
         <TextView
             android:id="@+id/profile_text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textSize="40sp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/back_icon"
-            android:layout_marginTop="40px"
-            android:paddingLeft="200px"
+            android:text="Profile"
             android:textColor="#222222"
-            />
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="#3B3B3B"
         android:layout_below="@+id/header_layout"/>
 
@@ -47,15 +47,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/header_layout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50px">
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/profile_icon"
-            android:layout_width="200px"
-            android:layout_height="200px"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/user_profile_icon"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20px"/>
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
             android:text="Afiq Husynuzon"
             android:layout_below="@+id/profile_icon"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             />
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/username"
             android:text="dafiq@sakit.com"
-            android:textSize="17sp"
+            android:textSize="13sp"
             android:layout_centerHorizontal="true"
             />
         <TextView
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/email"
-            android:textSize="17sp"
+            android:textSize="13sp"
             android:text="(+60)010101010"
             android:layout_centerHorizontal="true"
             />
@@ -92,172 +92,183 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info_layout"
-        android:rowCount="2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:columnCount="2"
-        android:layout_margin="40px"
-        >
-
-    <RelativeLayout
-        android:id="@+id/height_layout"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/info_layout"
-        android:background="@drawable/rounded_background"
-        android:layout_margin="50px"
-        android:layout_columnWeight="1">
-
-    <ImageView
-        android:id="@+id/height_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/height_icon"
-
-        />
-
-    <TextView
-        android:id="@+id/height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Height"
-        android:layout_toRightOf="@+id/height_icon"
-        android:textSize="15sp"
-        android:layout_marginTop="40px"
-        />
-
-
-    <TextView
-        android:id="@+id/user_height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="180cm"
-        android:layout_below="@+id/height"
-        android:layout_toRightOf="@+id/height_icon"
-        android:textStyle="bold"
-        android:textSize="17sp"
-        />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/weight_layout"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/height_layout"
-        android:background="@drawable/rounded_background"
-        android:layout_margin="50px"
-        android:layout_columnWeight="1">
-
-        <ImageView
-            android:id="@+id/weight_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/weight_icon"/>
-
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Weight"
-            android:layout_toRightOf="@+id/weight_icon"
-            android:textSize="15sp"
-            android:layout_marginTop="40px"
-            />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="80kg"
-            android:layout_below="@+id/weight"
-            android:layout_toRightOf="@+id/weight_icon"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            />
-
-    </RelativeLayout>
+        android:rowCount="2">
 
         <RelativeLayout
-            android:id="@+id/bmi_layout"
-            android:layout_row="1"
-            android:layout_column="0"
+            android:id="@+id/height_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/height_layout"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_below="@+id/info_layout"
+            android:layout_margin="20dp"
             android:background="@drawable/rounded_background"
-            android:layout_margin="50px"
-            android:layout_columnWeight="1">
+            >
 
             <ImageView
-                android:id="@+id/bmi_icon"
+                android:id="@+id/height_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bmi_icon"
-                android:layout_marginLeft="20px"/>
+                android:src="@drawable/height_icon"
+
+                />
 
             <TextView
-                android:id="@+id/bmi"
+                android:id="@+id/height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BMI"
-                android:layout_toRightOf="@+id/bmi_icon"
-                android:textSize="15sp"
-                android:layout_marginTop="40px"
-                android:layout_marginLeft="12px"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/height_icon"
+                android:text="Height"
+                android:textSize="14sp"
+                android:textColor="#6C6B6B"
+                />
+
+
+            <TextView
+                android:id="@+id/user_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/height"
+                android:layout_toRightOf="@+id/height_icon"
+                android:text="180cm"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/weight_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="20dp"
+            android:layout_toRightOf="@+id/height_layout"
+            android:background="@drawable/rounded_background">
+
+            <ImageView
+                android:id="@+id/weight_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/weight_icon" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/weight_icon"
+                android:text="Weight"
+                android:textSize="14sp"
+                android:textColor="#6C6B6B"
                 />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="23"
-                android:layout_below="@+id/bmi"
-                android:layout_toRightOf="@+id/bmi_icon"
+                android:layout_below="@+id/weight"
+                android:layout_toRightOf="@+id/weight_icon"
+                android:text="80kg"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:textSize="17sp"
-                android:layout_marginLeft="12px"
+                android:textColor="@color/black"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bmi_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_below="@+id/height_layout"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_background">
+
+            <ImageView
+                android:id="@+id/bmi_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/bmi_icon" />
+
+            <TextView
+                android:id="@+id/bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/bmi_icon"
+                android:text="BMI"
+                android:textSize="14sp"
+                android:textColor="#6C6B6B"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bmi"
+                android:layout_marginLeft="6dp"
+                android:layout_toRightOf="@+id/bmi_icon"
+                android:text="23"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/blood_type_layout"
-            android:layout_row="1"
-            android:layout_column="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background"
-            android:layout_margin="50px"
-            android:layout_columnWeight="1">
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_background">
 
             <ImageView
                 android:id="@+id/blood_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/blood_icon"/>
+                android:src="@drawable/blood_icon" />
 
             <TextView
                 android:id="@+id/blood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blood Type"
+                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/blood_icon"
-                android:textSize="15sp"
-                android:layout_marginTop="40px"
+                android:text="Blood Type"
+                android:textSize="14sp"
+                android:textColor="#6C6B6B"
                 />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="O"
                 android:layout_below="@+id/blood"
                 android:layout_toRightOf="@+id/blood_icon"
+                android:text="O"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:textSize="17sp"
+                android:textColor="@color/black"
                 />
 
         </RelativeLayout>
@@ -266,22 +277,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="#80A28F"
         android:layout_alignParentBottom="true"
-        android:paddingTop="8dp">
+        android:paddingVertical="6dp">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="10dp">
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
 
             <ImageView
                 android:id="@+id/home_icon_navbar"
-                android:layout_width="69dp"
-                android:layout_height="64dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/home_icon_navbar"
                 />
             <TextView
@@ -290,92 +303,118 @@
                 android:text="Home"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/home_icon_navbar"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="10dp">
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
 
             <ImageView
                 android:id="@+id/chat_icon_navbar"
-                android:layout_width="69dp"
-                android:layout_height="64dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/chat_icon_navbar"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Chat"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/chat_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="10dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp"
             >
 
             <ImageView
                 android:id="@+id/booking_icon_navbar"
-                android:layout_width="54dp"
-                android:layout_height="64dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/booking_icon_navbar"
+                app:tint="@color/black"
+
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Booking"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/booking_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+
                 />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="10dp"
+            android:layout_weight="1"
             >
 
             <ImageView
                 android:id="@+id/activity_icon_navbar"
-                android:layout_width="69dp"
-                android:layout_height="64dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/activity_icon_navbar"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Activity"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/activity_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
 
             <ImageView
                 android:id="@+id/profile_icon_navbar"
-                android:layout_width="69dp"
-                android:layout_height="64dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/profile_icon_navbar"
+                app:tint="#FFDE59"
+                android:layout_centerHorizontal="true"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Profile"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/profile_icon_navbar"
+                android:textColor="#FFDE59"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
         </RelativeLayout>
 
