@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, CustomerProfile.class);
+                Intent intent = new Intent(Login.this, PatientHomepage.class);
                 startActivity(intent);
             }
         });
