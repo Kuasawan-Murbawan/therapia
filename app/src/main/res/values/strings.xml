@@ -10,4 +10,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="register"><u>Register Here</u></string>
+    <string name="select_treatments_prompt">Select a treatment</string>
+    <string name="retrieve_data">Retrieve Realtime Data</string>
 </resources>

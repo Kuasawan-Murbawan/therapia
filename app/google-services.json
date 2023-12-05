@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1803011726",
+    "project_id": "therapia-3551f",
+    "storage_bucket": "therapia-3551f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1803011726:android:eecd412d6abe6b95d3ebdf",
+        "android_client_info": {
+          "package_name": "com.husyairi.therapia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsQKrzbemohgyx7u5yshIM_7twUqVFhA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

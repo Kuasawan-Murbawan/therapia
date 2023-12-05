@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="treatment_options">
+        <item>Physiotherapy</item>
+        <item>Speech Therapist</item>
+        <item>Therapist</item>
+    </string-array>
+
+</resources>
