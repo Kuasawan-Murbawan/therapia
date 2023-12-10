@@ -7,12 +7,22 @@
     tools:context=".Booking">
 
     <TextView
+        android:id="@+id/booking_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bookings"
         android:layout_centerHorizontal="true"
         android:textSize="40dp"
         android:padding="30dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/booking_title"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -104,7 +114,7 @@
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/booking_icon_navbar"
-                app:tint="@color/black"
+                app:tint="#FFDE59"
 
                 />
             <TextView
@@ -113,7 +123,7 @@
                 android:text="Booking"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/booking_icon_navbar"
-                android:textColor="@color/black"
+                android:textColor="#FFDE59"
                 android:textSize="15sp"
                 android:textStyle="bold"
 
@@ -159,7 +169,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/profile_icon_navbar"
-                app:tint="#FFDE59"
+                app:tint="@color/black"
                 android:layout_centerHorizontal="true"
                 />
             <TextView
@@ -168,7 +178,7 @@
                 android:text="Profile"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/profile_icon_navbar"
-                android:textColor="#FFDE59"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 />

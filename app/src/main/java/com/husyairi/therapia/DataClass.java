@@ -33,4 +33,8 @@ public class DataClass {
     private String dataLocation;
     private String dataImage;
 
+    public DataClass(){
+
+    }
+
 }

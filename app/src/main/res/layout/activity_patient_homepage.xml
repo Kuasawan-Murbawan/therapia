@@ -35,14 +35,14 @@
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/home_icon_navbar"
-                />
+                app:tint="#FFDE59" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/home_icon_navbar"
-                android:textColor="@color/black"
+                android:textColor="#FFDE59"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 />
@@ -144,7 +144,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/profile_icon_navbar"
-                app:tint="#FFDE59"
+                app:tint="@color/black"
                 android:layout_centerHorizontal="true"
                 />
             <TextView
@@ -153,7 +153,7 @@
                 android:text="Profile"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/profile_icon_navbar"
-                android:textColor="#FFDE59"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 />
