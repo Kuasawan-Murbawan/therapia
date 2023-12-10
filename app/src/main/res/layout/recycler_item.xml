@@ -54,14 +54,14 @@
             android:textSize="19sp"/>
 
         <TextView
-            android:id="@+id/recDesc"
+            android:id="@+id/recDate"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/recTreatment"
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@+id/recImage"
             android:maxLines="2"
-            android:text="Description"
+            android:text="Date"
             android:textColor="#80A28F"
             android:textSize="12sp"/>
 

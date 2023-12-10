@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView detailDesc, detailTreatment;
+    TextView detailDesc, detailTreatment, detailTime, detailDate;
     ImageView detailImage;
 
     @Override
@@ -18,14 +18,18 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        detailDate = findViewById(R.id.detailDate);
         detailDesc = findViewById(R.id.detailDesc);
         detailTreatment = findViewById(R.id.detailTreatment);
         detailImage = findViewById(R.id.detailImage);
+        detailTime = findViewById(R.id.detailTime);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
             detailDesc.setText(bundle.getString("Description"));
             detailTreatment.setText(bundle.getString("Treatment"));
+            detailDate.setText(bundle.getString("Date"));
+            detailTime.setText(bundle.getString("Time"));
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
 
         }

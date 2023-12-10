@@ -15,9 +15,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,12 +32,18 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Calendar;
+
 public class UploadPosting extends AppCompatActivity {
 
     ImageView uploadImage;
     Button saveButton;
     EditText uploadDesc, uploadLocation;
     Spinner chooseTreatment;
+
+    DatePicker uploadDate;
+
+    TimePicker uploadTime;
     Uri uri;
 
     String imageURL;
@@ -53,6 +61,14 @@ public class UploadPosting extends AppCompatActivity {
         uploadDesc = findViewById(R.id.uploadDesc);
         uploadLocation = findViewById(R.id.uploadLoc);
         chooseTreatment = findViewById(R.id.chooseTreatment);
+        uploadDate = findViewById(R.id.uploadDate);
+        uploadTime = findViewById(R.id.uploadTime);
+
+        // disable dates before today
+        Calendar today = Calendar.getInstance();
+        long now = today.getTimeInMillis();
+        uploadDate.setMinDate(now);
+
 
         // Prompt user to pick a local image
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(  // create a button to start the activity
@@ -90,7 +106,7 @@ public class UploadPosting extends AppCompatActivity {
     }
 
     public void saveData(){
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Android Images")
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Patient Images") // from "Android Images"
                 .child(uri.getLastPathSegment());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(UploadPosting.this);
@@ -123,7 +139,20 @@ public class UploadPosting extends AppCompatActivity {
         String desc = uploadDesc.getText().toString();
         String location = uploadLocation.getText().toString();
 
-        DataClass dataClass = new DataClass(treatment, desc, location, imageURL);
+        // For Date & Time
+        int day = uploadDate.getDayOfMonth();
+        int month = uploadDate.getMonth()+1;
+        int year = uploadDate.getYear();
+
+        int hour = uploadTime.getHour();
+        int minute = uploadTime.getMinute();
+
+        // Create a formatted date and time string
+        String formattedDate = String.format("%02d/%02d/%04d", month, day, year);
+        String formattedTime = String.format("%02d:%02d", hour, minute);
+
+
+        DataClass dataClass = new DataClass(treatment, desc, location, imageURL, formattedDate, formattedTime);
 
         FirebaseDatabase.getInstance().getReference("User 1").child(treatment)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {

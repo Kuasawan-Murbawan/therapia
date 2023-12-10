@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent"
+android:layout_height="wrap_content"
 android:orientation="vertical"
 tools:context=".UploadPosting">
 
@@ -69,6 +69,20 @@ tools:context=".UploadPosting">
             android:padding="16dp"
             android:hint="Enter Location"
             android:gravity="start|center_vertical"/>
+
+        <DatePicker
+            android:id="@+id/uploadDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            />
+
+        <TimePicker
+            android:id="@+id/uploadTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:timePickerMode="spinner"/>
 
         <Button
             android:layout_width="match_parent"
