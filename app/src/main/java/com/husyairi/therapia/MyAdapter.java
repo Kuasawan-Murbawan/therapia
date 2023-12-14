@@ -33,21 +33,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         return new MyViewHolder(view);
     }
 
+    // This is for Details of booking
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recTreatment.setText(dataList.get(position).getDataTreatmentType());
-        holder.recDesc.setText(dataList.get(position).getDataDesc());
+        holder.recDate.setText(dataList.get(position).getDataDate());
         holder.recLocation.setText(dataList.get(position).getDataLocation());
-        // add Date & Time here
+
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
-                intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
+                intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDataDate());
                 intent.putExtra("Treatment", dataList.get(holder.getAdapterPosition()).getDataTreatmentType());
+                intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
+                intent.putExtra("Time", dataList.get(holder.getAdapterPosition()).getDataTime());
                 // maybe need to put location here
 
                 context.startActivity(intent);
@@ -64,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 class MyViewHolder extends RecyclerView.ViewHolder{
 
     ImageView recImage;
-    TextView recTreatment, recDesc,recLocation;
+    TextView recTreatment, recLocation, recDate; //recTime, recDesc;
     CardView recCard;
 
     // initialize date & time
@@ -75,9 +78,9 @@ class MyViewHolder extends RecyclerView.ViewHolder{
 
         recImage = itemView.findViewById(R.id.recImage);
         recCard = itemView.findViewById(R.id.recCard);
-        recDesc = itemView.findViewById(R.id.recDesc);
         recTreatment = itemView.findViewById(R.id.recTreatment);
         recLocation = itemView.findViewById(R.id.recLocation);
+        recDate = itemView.findViewById(R.id.recDate);
         // add date & time
 
     }

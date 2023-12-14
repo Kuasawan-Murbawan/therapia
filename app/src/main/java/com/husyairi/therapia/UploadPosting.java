@@ -15,9 +15,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,10 +27,14 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.util.Calendar;
 
 public class UploadPosting extends AppCompatActivity {
 
@@ -37,6 +43,13 @@ public class UploadPosting extends AppCompatActivity {
     EditText uploadDesc, uploadLocation;
     Spinner chooseTreatment;
     Uri uri;
+
+    DatePicker uploadDate;
+
+    TimePicker uploadTime;
+    FirebaseUser user;
+    FirebaseAuth auth;
+
 
     String imageURL;
 
@@ -53,6 +66,14 @@ public class UploadPosting extends AppCompatActivity {
         uploadDesc = findViewById(R.id.uploadDesc);
         uploadLocation = findViewById(R.id.uploadLoc);
         chooseTreatment = findViewById(R.id.chooseTreatment);
+        uploadDate = findViewById(R.id.uploadDate);
+        uploadTime = findViewById(R.id.uploadTime);
+
+        // disable dates before today
+        Calendar today = Calendar.getInstance();
+        long now = today.getTimeInMillis();
+        uploadDate.setMinDate(now);
+
 
         // Prompt user to pick a local image
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(  // create a button to start the activity
@@ -123,9 +144,27 @@ public class UploadPosting extends AppCompatActivity {
         String desc = uploadDesc.getText().toString();
         String location = uploadLocation.getText().toString();
 
-        DataClass dataClass = new DataClass(treatment, desc, location, imageURL);
+        // For Date & Time
+        int day = uploadDate.getDayOfMonth();
+        int month = uploadDate.getMonth()+1;
+        int year = uploadDate.getYear();
 
-        FirebaseDatabase.getInstance().getReference("User 1").child(treatment)
+        int hour = uploadTime.getHour();
+        int minute = uploadTime.getMinute();
+
+        // Create a formatted date and time string
+        String formattedDate = String.format("%02d/%02d/%04d", month, day, year);
+        String formattedTime = String.format("%02d:%02d", hour, minute);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        String sanitizedEmail = user.getEmail().replace('.', ',');
+
+
+
+        DataClass dataClass = new DataClass(treatment, desc, location, imageURL, formattedDate, formattedTime);
+
+        FirebaseDatabase.getInstance().getReference(sanitizedEmail).child(treatment)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
