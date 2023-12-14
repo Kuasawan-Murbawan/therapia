@@ -60,27 +60,19 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Afiq Husynuzon"
+            android:text="Usernme Here"
             android:layout_below="@+id/profile_icon"
             android:textStyle="bold"
             android:textSize="17sp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             />
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/username"
-            android:text="dafiq@sakit.com"
-            android:textSize="13sp"
-            android:layout_centerHorizontal="true"
-            />
+
         <TextView
             android:id="@+id/phone_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/email"
+            android:layout_below="@+id/username"
             android:textSize="13sp"
             android:text="(+60)010101010"
             android:layout_centerHorizontal="true"
@@ -275,7 +267,28 @@
 
     </GridLayout>
 
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/logout_button"
+        android:layout_centerInParent="true"
+        android:text="dafiq@sakit.com"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navbar_layout"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:text="Logout" />
+
     <LinearLayout
+        android:id="@+id/navbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

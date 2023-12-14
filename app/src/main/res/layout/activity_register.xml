@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Register">
+
 
     <ImageView
         android:id="@+id/therapia_logo"
@@ -27,7 +28,7 @@
         android:textColor="#403229" />
 
     <LinearLayout
-        android:id="@+id/login_container"
+        android:id="@+id/register_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -39,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign In"
+            android:text="Register"
             android:textSize="23sp"
             android:fontFamily="@font/garet_book"
             android:textStyle="bold"
@@ -47,7 +48,7 @@
             />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/reg_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -55,7 +56,7 @@
             />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/reg_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -63,10 +64,10 @@
             android:padding="16dp"/>
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/reg_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Register"
             android:backgroundTint="@color/black"/>
 
     </LinearLayout>
@@ -75,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/login_container"
+        android:layout_below="@+id/register_container"
         android:layout_centerInParent="true"
         android:layout_marginTop="70dp"
         >
@@ -83,18 +84,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Don't have an account?"
+            android:text="Have an account?"
             android:paddingTop="20dp"
             />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/register_here"
-        android:text="@string/register"
-        android:textColor="@color/black"
-        android:padding="20dp"
-        />
+        <TextView
+            android:id="@+id/login_here"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Log In Here"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            />
 
     </LinearLayout>
 
@@ -103,6 +104,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/progress_bar"
         android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:progressTint="@color/TherapiaGreen"
+        />
 
 </RelativeLayout>
