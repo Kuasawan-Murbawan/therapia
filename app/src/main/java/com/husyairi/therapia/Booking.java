@@ -13,6 +13,8 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,9 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
     List<DataClass> dataList = new ArrayList<>();
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
+
+    FirebaseUser user;
+    FirebaseAuth auth;
 
     FloatingActionButton fab;
     @Override
@@ -50,9 +55,13 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
         AlertDialog dialog = builder.create();
         dialog.show();
 
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        String sanitizedEmail = user.getEmail().replace('.',',');
+
         MyAdapter adapter = new MyAdapter(Booking.this, dataList);
         recyclerView.setAdapter(adapter);
-        databaseReference = FirebaseDatabase.getInstance().getReference("User 1"); // changeable
+        databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail); // changeable
         dialog.show();
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
