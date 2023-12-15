@@ -29,7 +29,7 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_homepage);
-
+        getSupportActionBar().hide();
 
 
         profile_icon_navbar = findViewById(R.id.profile_icon_navbar);

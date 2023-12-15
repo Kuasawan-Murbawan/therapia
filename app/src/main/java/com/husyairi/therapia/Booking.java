@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking extends AppCompatActivity implements View.OnClickListener{
-    private ImageView home_icon_navbar;
+    private ImageView home_icon_navbar, profile_icon_navbar;
     RecyclerView recyclerView;
     List<DataClass> dataList = new ArrayList<>();
     DatabaseReference databaseReference;
@@ -39,9 +39,14 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
+        getSupportActionBar().hide();
 
         home_icon_navbar = findViewById(R.id.home_icon_navbar);
         home_icon_navbar.setOnClickListener(this);
+
+
+        profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
+        profile_icon_navbar.setOnClickListener(this);
 
         fab = findViewById(R.id.addpost);
         recyclerView = findViewById(R.id.recyclerView);
@@ -102,12 +107,16 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
                 intent = new Intent(this, PatientHomepage.class);
                 break;
 
+            case R.id.profile_icon_navbar:
+                intent = new Intent(getApplicationContext(), CustomerProfile.class);
+                break;
             default:
                 intent = null;
         }
 
         if(intent != null){
             startActivity(intent);
+            finish();
         }
     }
 

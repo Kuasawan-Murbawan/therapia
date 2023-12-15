@@ -17,20 +17,26 @@ import org.w3c.dom.Text;
 
 public class CustomerProfile extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView home_icon_navbar;
+    private ImageView home_icon_navbar, booking_icon_navbar;
     FirebaseAuth auth;
     Button logoutButton;
     FirebaseUser user;
 
-    TextView textEmail;
+    TextView textEmail, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_profile);
+        getSupportActionBar().hide();
 
         home_icon_navbar = findViewById(R.id.home_icon_navbar);
         home_icon_navbar.setOnClickListener(this);
+
+        booking_icon_navbar = findViewById(R.id.booking_icon_navbar);
+        booking_icon_navbar.setOnClickListener(this);
+
+        username = findViewById(R.id.username);
 
         auth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logout_button);
@@ -44,6 +50,7 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
         }
         else{
             textEmail.setText(user.getEmail());
+            username.setText(user.getEmail().split("@")[0]);
         }
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -66,13 +73,16 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
             case R.id.home_icon_navbar:
                 intent = new Intent(this, PatientHomepage.class);
                 break;
-
+            case R.id.booking_icon_navbar:
+                intent = new Intent(getApplicationContext(), Booking.class);
+                break;
             default:
                 intent = null;
         }
 
         if(intent != null){
             startActivity(intent);
+            finish();
         }
     }
 

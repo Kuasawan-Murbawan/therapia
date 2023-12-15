@@ -17,6 +17,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        getSupportActionBar().hide();
 
         detailDate = findViewById(R.id.detailDate);
         detailDesc = findViewById(R.id.detailDesc);
