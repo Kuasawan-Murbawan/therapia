@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 //create dev backdoor to access it without login
 
-public class Login extends AppCompatActivity {
+public class LoginPatient extends AppCompatActivity {
 
     EditText editTextEmail, editTextPassword;
     Button loginButton;
@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_patient);
         getSupportActionBar().hide();
 
         editTextEmail = findViewById(R.id.email);
@@ -66,12 +66,12 @@ public class Login extends AppCompatActivity {
                 password = editTextPassword.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Login.this, "Enter Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginPatient.this, "Enter Email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginPatient.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -83,13 +83,13 @@ public class Login extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
 
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginPatient.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), PatientHomepage.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Login.this, "Authentication failed.",
+                                    Toast.makeText(LoginPatient.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -101,7 +101,7 @@ public class Login extends AppCompatActivity {
         regHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Register.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterPatient.class);
                 startActivity(intent);
                 finish();
             }

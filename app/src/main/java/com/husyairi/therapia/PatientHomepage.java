@@ -43,7 +43,7 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
         user = auth.getCurrentUser();
 
         if(user == null){
-            Intent intent = new Intent(getApplicationContext(), Login.class);
+            Intent intent = new Intent(getApplicationContext(), LoginPatient.class);
             startActivity(intent);
             finish();
         }else{

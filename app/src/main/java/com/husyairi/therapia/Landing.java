@@ -16,6 +16,8 @@ public class Landing extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
+
 
         therapiaLogo = findViewById(R.id.therapia_logo);
         therapiaLogo.setOnClickListener(this);
@@ -23,7 +25,7 @@ public class Landing extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, SelectUser.class);
         startActivity(intent);
     }
 }

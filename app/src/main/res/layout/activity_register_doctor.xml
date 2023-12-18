@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CFD3F8"
+    tools:context=".RegisterDoctor">
+
+
+    <ImageView
+        android:id="@+id/therapia_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/therapia_logo" />
+
+    <TextView
+        android:id="@+id/therapia_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Therapia"
+        android:layout_below="@+id/therapia_logo"
+        android:textSize="38dp"
+        android:fontFamily="@font/belleza"
+        android:paddingTop="0dp"
+        android:textColor="#403229" />
+
+    <LinearLayout
+        android:id="@+id/register_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/therapia_text"
+        android:layout_marginTop="70dp"
+        android:paddingHorizontal="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Register"
+            android:textSize="23sp"
+            android:fontFamily="@font/garet_book"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/reg_email_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:padding="16dp"
+            />
+
+        <EditText
+            android:id="@+id/reg_password_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="16dp"/>
+
+        <Button
+            android:id="@+id/reg_button_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:backgroundTint="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/register_container"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Have an account?"
+            android:paddingTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/login_here"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Log In Here"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:progressTint="@color/TherapiaGreen"
+        />
+
+</RelativeLayout>
