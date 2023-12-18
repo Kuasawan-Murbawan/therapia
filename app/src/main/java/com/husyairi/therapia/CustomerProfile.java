@@ -54,7 +54,7 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginPatient.class);
+                Intent intent = new Intent(getApplicationContext(), Landing.class);
                 startActivity(intent);
                 finish();
             }
