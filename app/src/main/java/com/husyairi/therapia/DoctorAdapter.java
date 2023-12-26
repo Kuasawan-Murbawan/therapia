@@ -1,13 +1,11 @@
 package com.husyairi.therapia;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,12 +42,13 @@ public class DoctorAdapter extends RecyclerView.Adapter<DocViewHolder> {
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
+                Intent intent = new Intent(context, DoctorDetailActivity.class);
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
                 intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDataDate());
                 intent.putExtra("Treatment", dataList.get(holder.getAdapterPosition()).getDataTreatmentType());
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Time", dataList.get(holder.getAdapterPosition()).getDataTime());
+                intent.putExtra("Username", dataList.get(holder.getAdapterPosition()).getUsername());
                 // maybe need to put location here
 
                 context.startActivity(intent);

@@ -7,11 +7,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 public class DetailActivity extends AppCompatActivity {
 
     TextView detailDesc, detailTreatment, detailTime, detailDate;
     ImageView detailImage;
+
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +40,7 @@ public class DetailActivity extends AppCompatActivity {
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
 
         }
+
+
     }
 }

@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:text="Doctor Homepage"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
+        android:textSize="28sp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
         />
 
     <androidx.recyclerview.widget.RecyclerView

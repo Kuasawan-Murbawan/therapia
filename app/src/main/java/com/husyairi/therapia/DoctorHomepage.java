@@ -61,7 +61,7 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         auth = FirebaseAuth.getInstance();
 
 
-        MyAdapter adapter = new MyAdapter(DoctorHomepage.this, dataList);
+        DoctorAdapter adapter = new DoctorAdapter(DoctorHomepage.this, dataList);
         docRecyclerView.setAdapter(adapter);
 
         List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com");

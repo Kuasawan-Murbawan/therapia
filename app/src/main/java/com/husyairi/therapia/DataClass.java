@@ -9,18 +9,23 @@ public class DataClass {
     private String dataLocation;
     private String dataImage;
 
+    private String jobAccepted;
+    private String username;
 
-
-    public DataClass(String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime) {
+    public DataClass(String username, String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime, String jobAccepted) {
         this.dataTreatmentType = dataTreatmentType;
         this.dataDesc = dataDesc;
         this.dataLocation = dataLocation;
         this.dataImage = dataImage;
         this.dataDate = dataDate;
         this.dataTime = dataTime;
+        this.jobAccepted = jobAccepted;
+        this.username = username;
     }
 
     private String dataDesc;
+
+    public String getUsername() { return username;}
 
     public String getDataTreatmentType() {
         return dataTreatmentType;
@@ -28,6 +33,12 @@ public class DataClass {
 
     public String getDataDesc() {
         return dataDesc;
+    }
+
+    public String getJobAccepted() { return jobAccepted;}
+
+    public void setJobAccepted(String jobAccepted) {
+        this.jobAccepted = jobAccepted;
     }
 
     public String getDataLocation() {

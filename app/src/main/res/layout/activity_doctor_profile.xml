@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"/>
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/doctor_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username Here"
@@ -37,7 +37,7 @@
             android:id="@+id/phone_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/username"
+            android:layout_below="@+id/doctor_email"
             android:textSize="13sp"
             android:text="(+60)010101010"
             android:layout_centerHorizontal="true"
