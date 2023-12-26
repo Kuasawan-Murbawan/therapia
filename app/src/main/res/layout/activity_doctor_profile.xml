@@ -4,40 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerProfile"
-    android:background="#EFEFF6">
-
-    <RelativeLayout
-        android:id="@+id/header_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <TextView
-            android:id="@+id/profile_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:text="Profile"
-            android:textColor="#222222"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#3B3B3B"
-        android:layout_below="@+id/header_layout"/>
+    tools:context=".DoctorProfile"
+    android:background="#E7E7EA">
 
     <RelativeLayout
         android:id="@+id/info_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/header_layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp">
 
@@ -72,219 +45,93 @@
 
     </RelativeLayout>
 
-    <GridLayout
+    <RelativeLayout
+        android:id="@+id/about_me_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info_layout"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:columnCount="2"
-        android:rowCount="2">
+        >
 
-        <RelativeLayout
-            android:id="@+id/height_layout"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_below="@+id/info_layout"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
             android:background="@drawable/rounded_background"
+            android:padding="20dp"
+
             >
 
-            <ImageView
-                android:id="@+id/height_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/height_icon"
-
-                />
-
             <TextView
-                android:id="@+id/height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/height_icon"
-                android:text="Height"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
-                />
-
-
-            <TextView
-                android:id="@+id/user_height"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/height"
-                android:layout_toRightOf="@+id/height_icon"
-                android:text="180cm"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/weight_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp"
-            android:layout_toRightOf="@+id/height_layout"
-            android:background="@drawable/rounded_background">
-
-            <ImageView
-                android:id="@+id/weight_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/weight_icon" />
-
-            <TextView
-                android:id="@+id/weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/weight_icon"
-                android:text="Weight"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
-                />
-
+                android:text="About Me"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/weight"
-                android:layout_toRightOf="@+id/weight_icon"
-                android:text="80kg"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
+                android:text="Based in Gombak, specialising in Orthopaedic" />
 
-        </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/bmi_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_below="@+id/height_layout"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_background">
-
-            <ImageView
-                android:id="@+id/bmi_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/bmi_icon" />
-
-            <TextView
-                android:id="@+id/bmi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/bmi_icon"
-                android:text="BMI"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/bmi"
-                android:layout_marginLeft="6dp"
-                android:layout_toRightOf="@+id/bmi_icon"
-                android:text="23"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/blood_type_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_background">
-
-            <ImageView
-                android:id="@+id/blood_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/blood_icon" />
-
-            <TextView
-                android:id="@+id/blood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/blood_icon"
-                android:text="Blood Type"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/blood"
-                android:layout_toRightOf="@+id/blood_icon"
-                android:text="O"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-
-        </RelativeLayout>
-
-    </GridLayout>
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/logout_button"
-        android:layout_centerInParent="true"
-        android:text="dafiq@sakit.com"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+        android:layout_below="@+id/about_me_layout"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_background"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualifications"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senior Occupational Therapy in Hospital Tomson. 7 years of experience"
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
 
     <Button
-        android:id="@+id/logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/navbar_layout"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:text="Logout" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/doctor_navbar"
+        android:layout_marginBottom="20dp"
+        android:text="Log Out"
+        android:id="@+id/logout_button_doctor"
+        />
+
 
     <LinearLayout
-        android:id="@+id/navbar_layout"
+        android:id="@+id/doctor_navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#80A28F"
+        android:background="@color/DoctorYellow"
         android:layout_alignParentBottom="true"
         android:paddingVertical="6dp">
 
@@ -301,7 +148,7 @@
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/home_icon_navbar"
-                />
+                app:tint="@color/black" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -341,6 +188,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/booking_navbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -403,12 +251,13 @@
             android:layout_weight="1"
             >
 
+
             <ImageView
                 android:id="@+id/profile_icon_navbar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/profile_icon_navbar"
-                app:tint="#FFDE59"
+                app:tint="@color/TherapiaGreen"
                 android:layout_centerHorizontal="true"
                 />
             <TextView
@@ -417,12 +266,16 @@
                 android:text="Profile"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/profile_icon_navbar"
-                android:textColor="#FFDE59"
+                android:textColor="@color/TherapiaGreen"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 />
+
+
         </RelativeLayout>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>

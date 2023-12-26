@@ -29,6 +29,8 @@
         android:layout_height="wrap_content"
         android:text="Doctor"
         android:textSize="16sp"
+        android:backgroundTint="@color/DoctorYellow"
+        android:textColor="@color/black"
         />
     </LinearLayout>
 </RelativeLayout>

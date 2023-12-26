@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,11 +23,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DoctorHomepage extends AppCompatActivity {
+public class DoctorHomepage extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView docRecyclerView;
 
     FirebaseAuth auth;
+
+    ImageView profile_icon_navbar;
 
     List<DataClass> dataList = new ArrayList<>();
 
@@ -38,6 +43,9 @@ public class DoctorHomepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_homepage);
         getSupportActionBar().hide();
+
+        profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
+        profile_icon_navbar.setOnClickListener(this);
 
         docRecyclerView = findViewById(R.id.doctor_recyclerView);
 
@@ -83,5 +91,29 @@ public class DoctorHomepage extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+
+        switch(view.getId()){
+            case R.id.profile_icon_navbar:
+                intent = new Intent(this, DoctorProfile.class);
+                break;
+
+            default:
+                intent = null;
+        }
+
+        if(intent != null){
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
