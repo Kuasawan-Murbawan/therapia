@@ -3,6 +3,7 @@ package com.husyairi.therapia;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
     TextView detailDesc, detailTreatment, detailTime, detailDate, detailUsername;
     ImageView detailImage;
 
-    Button acceptJob;
+    Button acceptJob, medHist;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -53,6 +54,17 @@ public class DoctorDetailActivity extends AppCompatActivity {
 
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
+
+
+        medHist = findViewById(R.id.medical_history_button);
+        medHist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MedicalHistory.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         acceptJob = findViewById(R.id.accept_job_button);
 

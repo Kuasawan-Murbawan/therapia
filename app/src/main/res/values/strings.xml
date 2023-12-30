@@ -12,4 +12,27 @@
     <string name="register"><u>Register Here</u></string>
     <string name="select_treatments_prompt">Select a treatment</string>
     <string name="retrieve_data">Retrieve Realtime Data</string>
+    <string name="demographic_details">
+        &#8226; Patient Name: John Doe\n
+        &#8226; Age: 45\n
+        &#8226; Gender: Male\n
+        &#8226; Occupation: Office worker\n
+        &#8226; Contact Information: Phone number
+    </string>
+    <string name="complaint_details">
+        &#8226; Low back pain radiating down the right leg to the calf (sciatica) for the past 2 weeks.\n
+        &#8226; Pain is sharp and stabbing, worse with sitting and bending forward, improves with lying down.\n
+        &#8226; Difficulty standing from a seated position due to pain.\n
+        &#8226; No recent trauma or injury.
+    </string>
+    <string name="medical_history_details">
+        &#8226; Previous history of lumbar disc herniation 5 years ago, treated conservatively with physiotherapy and medication.\n
+        &#8226; No other major medical conditions or surgeries.\n
+        &#8226; Medications: Lisinopril for hypertension.\n
+    </string>
+    <string name="goal_details">
+        &#8226; Reduce pain and inflammation in the lower back.\n
+        &#8226; Improve range of motion and flexibility in the lumbar spine.\n
+        &#8226; Improve functional mobility and ability to perform daily activities.\n
+    </string>
 </resources>
