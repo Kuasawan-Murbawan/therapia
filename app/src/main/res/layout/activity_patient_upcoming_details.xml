@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".Patient_Upcoming_Details"
+android:background="#E8E5E5">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/detailTreatment"
+    android:layout_marginTop="14dp"
+    android:text="Treatment"
+    android:textSize="28sp"
+    android:layout_gravity="center"
+    android:layout_marginBottom="12dp"
+    android:textColor="@color/TherapiaGreen"
+    android:textStyle="bold"
+    />
+
+<ImageView
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    android:id="@+id/detailImage"
+    android:padding="8dp"
+    android:layout_gravity="center"
+    android:src="@drawable/baseline_upload_24"
+    android:scaleType="fitCenter"
+    android:background="@drawable/rounded_background"
+    android:layout_margin="8dp"
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Description"
+    android:layout_marginLeft="20dp"
+    android:layout_marginVertical="7dp"
+    />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/detailDesc"
+    android:layout_marginHorizontal="20dp"
+    android:padding="20dp"
+    android:text="Description"
+    android:layout_gravity="center"
+    android:textSize="18sp"
+    android:textColor="@color/TherapiaGreen"
+    android:background="@drawable/rounded_background"
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Date"
+    android:layout_marginLeft="20dp"
+    android:layout_marginVertical="7dp"
+    />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/detailDate"
+    android:layout_marginHorizontal="20dp"
+    android:padding="20dp"
+    android:text="Date"
+    android:layout_gravity="center"
+    android:textSize="18sp"
+    android:textColor="@color/TherapiaGreen"
+    android:background="@drawable/rounded_background"
+
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Time"
+    android:layout_marginLeft="20dp"
+    android:layout_marginVertical="7dp"
+    />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/detailTime"
+    android:layout_marginHorizontal="20dp"
+    android:padding="20dp"
+    android:text="Time"
+    android:layout_gravity="center"
+    android:textSize="18sp"
+    android:textColor="@color/TherapiaGreen"
+    android:background="@drawable/rounded_background"
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Doctor's Name"
+    android:layout_marginLeft="20dp"
+    android:layout_marginVertical="7dp"
+    />
+
+<TextView
+    android:id="@+id/detail_doctor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/rounded_background"
+    android:padding="20dp"
+    android:text="Doctor"
+    android:textColor="@color/TherapiaGreen"
+    android:textSize="18sp" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    >
+
+    <Button
+        android:id="@+id/medical_history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor's Profile"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/TherapiaGreen"
+        />
+
+    <Button
+        android:id="@+id/accept_job_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track Location"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/DoctorYellow"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>
+
+</LinearLayout>

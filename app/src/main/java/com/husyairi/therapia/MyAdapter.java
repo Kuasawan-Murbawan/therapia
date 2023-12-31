@@ -43,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);

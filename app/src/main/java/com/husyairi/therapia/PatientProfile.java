@@ -1,5 +1,7 @@
 package com.husyairi.therapia;
 
+import static android.app.PendingIntent.getActivity;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,9 +14,9 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CustomerProfile extends AppCompatActivity implements View.OnClickListener {
+public class PatientProfile extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView home_icon_navbar, booking_icon_navbar;
+    private ImageView home_icon_navbar, booking_icon_navbar, activity_icon_navbar;
     FirebaseAuth auth;
     Button logoutButton;
     FirebaseUser user;
@@ -24,7 +26,7 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_profile);
+        setContentView(R.layout.activity_patient_profile);
         getSupportActionBar().hide();
 
         home_icon_navbar = findViewById(R.id.home_icon_navbar);
@@ -32,6 +34,9 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
 
         booking_icon_navbar = findViewById(R.id.booking_icon_navbar);
         booking_icon_navbar.setOnClickListener(this);
+
+        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar.setOnClickListener(this);
 
         username = findViewById(R.id.username);
 
@@ -53,10 +58,12 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(), Landing.class);
                 startActivity(intent);
                 finish();
+
             }
         });
 
@@ -68,11 +75,16 @@ public class CustomerProfile extends AppCompatActivity implements View.OnClickLi
         switch(view.getId()){
 
             case R.id.home_icon_navbar:
-                intent = new Intent(this, PatientHomepage.class);
+                intent = new Intent(getApplicationContext(), PatientHomepage.class);
                 break;
             case R.id.booking_icon_navbar:
                 intent = new Intent(getApplicationContext(), Booking.class);
                 break;
+
+            case R.id.activity_icon_navbar:
+                intent = new Intent(getApplicationContext(), PatientActivity.class);
+                break;
+
             default:
                 intent = null;
         }

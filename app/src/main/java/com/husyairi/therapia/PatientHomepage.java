@@ -14,8 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class PatientHomepage extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView profile_icon_navbar;
-    private ImageView booking_icon_navbar;
+    private ImageView profile_icon_navbar, booking_icon_navbar, activity_icon_navbar;
 
     private TextView username;
 
@@ -37,6 +36,9 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
 
         booking_icon_navbar = findViewById(R.id.booking_icon_navbar);
         booking_icon_navbar.setOnClickListener(this);
+
+        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar.setOnClickListener(this);
 
         username = findViewById(R.id.username);
         auth = FirebaseAuth.getInstance();
@@ -63,11 +65,15 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
 
         switch(view.getId()) {
             case R.id.profile_icon_navbar:
-                intent = new Intent(this, CustomerProfile.class);
+                intent = new Intent(this, PatientProfile.class);
                 break;
 
             case R.id.booking_icon_navbar:
                 intent = new Intent(this, Booking.class);
+                break;
+
+            case R.id.activity_icon_navbar:
+                intent = new Intent(this, PatientActivity.class);
                 break;
 
             default:

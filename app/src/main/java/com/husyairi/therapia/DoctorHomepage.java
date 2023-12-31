@@ -29,7 +29,7 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
 
     FirebaseAuth auth;
 
-    ImageView profile_icon_navbar;
+    ImageView profile_icon_navbar, activity_icon_navbar;
 
     List<DataClass> dataList = new ArrayList<>();
 
@@ -46,6 +46,9 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
 
         profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
         profile_icon_navbar.setOnClickListener(this);
+
+        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar.setOnClickListener(this);
 
         docRecyclerView = findViewById(R.id.doctor_recyclerView);
 
@@ -101,6 +104,11 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
             case R.id.profile_icon_navbar:
                 intent = new Intent(this, DoctorProfile.class);
                 break;
+
+            case R.id.activity_icon_navbar:
+                intent = new Intent(getApplicationContext(), DoctorActivity.class);
+                break;
+
 
             default:
                 intent = null;

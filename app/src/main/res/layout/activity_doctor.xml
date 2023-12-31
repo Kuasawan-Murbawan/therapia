@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Activity"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/DoctorYellow"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="6dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
+
+            <ImageView
+                android:id="@+id/home_icon_navbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_icon_navbar"
+                app:tint="@color/black" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/home_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
+
+            <ImageView
+                android:id="@+id/chat_icon_navbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/chat_icon_navbar"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/chat_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/booking_navbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp"
+            >
+
+            <ImageView
+                android:id="@+id/booking_icon_navbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/booking_icon_navbar"
+                app:tint="@color/black"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/booking_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/activity_icon_navbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/activity_icon_navbar"
+                app:tint="@color/TherapiaGreen"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/activity_icon_navbar"
+                android:textColor="@color/TherapiaGreen"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+
+            <ImageView
+                android:id="@+id/profile_icon_navbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profile_icon_navbar"
+                app:tint="@color/black"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/profile_icon_navbar"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
