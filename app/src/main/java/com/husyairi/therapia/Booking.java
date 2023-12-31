@@ -67,7 +67,6 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
 
         MyAdapter adapter = new MyAdapter(Booking.this, dataList);
         recyclerView.setAdapter(adapter);
-        //databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail); // changeable
         databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
         dialog.show();
 

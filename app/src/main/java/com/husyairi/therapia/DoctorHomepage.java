@@ -62,29 +62,31 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         dialog.show();
 
         auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
-
-        DoctorAdapter adapter = new DoctorAdapter(DoctorHomepage.this, dataList);
-        docRecyclerView.setAdapter(adapter);
+        DoctorAdapter docadapter = new DoctorAdapter(DoctorHomepage.this, dataList);
+        docRecyclerView.setAdapter(docadapter);
 
         List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com");
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-        dataList.clear(); // Clear the list once before fetching data
+        dataList.clear();
 
         for (String userEmail : userEmails) {
             String sanitizedEmail = userEmail.replace('.', ',');
             DatabaseReference databaseReference = firebaseDatabase.getReference(sanitizedEmail);
             dialog.show();
 
-            ValueEventListener eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                         DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                        dataList.add(dataClass);
+                        if ("null".equals(dataClass.getJobAccepted())) {
+                            dataList.add(dataClass);
+                        }
                     }
-                    adapter.notifyDataSetChanged();
+                    docadapter.notifyDataSetChanged();
                     dialog.dismiss();
                 }
 
