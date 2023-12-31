@@ -36,6 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     // This is for Details of booking
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recTreatment.setText(dataList.get(position).getDataTreatmentType());
         holder.recDate.setText(dataList.get(position).getDataDate());

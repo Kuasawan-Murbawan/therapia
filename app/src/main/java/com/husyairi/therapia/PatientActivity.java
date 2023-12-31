@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -51,9 +52,9 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
         booking_icon_navbar = findViewById(R.id.booking_icon_navbar);
         booking_icon_navbar.setOnClickListener(this);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(PatientActivity.this, 1);
+        GridLayoutManager gridLayoutManagerUpcom = new GridLayoutManager(PatientActivity.this, 1);
         recview_upcoming = findViewById(R.id.recview_upcoming);
-        recview_upcoming.setLayoutManager(gridLayoutManager);
+        recview_upcoming.setLayoutManager(gridLayoutManagerUpcom);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(PatientActivity.this);
         builder.setCancelable(false);
@@ -67,6 +68,7 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
 
         MyAdapter adapterUpcoming = new MyAdapter(PatientActivity.this, dataListUpcom);
         recview_upcoming.setAdapter(adapterUpcoming);
+        //databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
         databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
         dialog.show();
 
@@ -77,8 +79,10 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
                 dataListUpcom.clear();
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     DataClass dataClassUpcom = itemSnapshot.getValue(DataClass.class);
-                    if (dataClassUpcom.getJobAccepted() != "null") { // Filter for accepted jobs
+                    if ("null".equals(dataClassUpcom.getJobAccepted()) == false) { // Filter for accepted jobs
                         dataListUpcom.add(dataClassUpcom);
+                    }else {
+                        Log.i("null", "This jobAccepted is null");
                     }
                 }
                 adapterUpcoming.notifyDataSetChanged();

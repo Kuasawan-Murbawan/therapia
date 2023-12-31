@@ -13,7 +13,8 @@
         android:text="Bookings"
         android:layout_centerHorizontal="true"
         android:textSize="40dp"
-        android:padding="30dp"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
         />
 
     <androidx.recyclerview.widget.RecyclerView

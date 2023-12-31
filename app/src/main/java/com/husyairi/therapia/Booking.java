@@ -67,7 +67,8 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
 
         MyAdapter adapter = new MyAdapter(Booking.this, dataList);
         recyclerView.setAdapter(adapter);
-        databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail); // changeable
+        //databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail); // changeable
+        databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
         dialog.show();
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
@@ -76,7 +77,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
                 dataList.clear();
                 for(DataSnapshot itemSnapshot: snapshot.getChildren()){
                     DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                    if (dataClass.getJobAccepted() == "null") {
+                    if ("null".equals(dataClass.getJobAccepted())) {
                         dataList.add(dataClass);
                     }
                 }
