@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,10 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DoctorDetailActivity extends AppCompatActivity {
 
-    TextView detailDesc, detailTreatment, detailTime, detailDate, detailUsername;
+    TextView detailDesc, detailTreatment, detailTime, detailDate, detailUsername, detailLocation;
     ImageView detailImage;
 
-    Button acceptJob, medHist;
+    Button acceptJob, medHist, distanceBtn;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -37,12 +36,15 @@ public class DoctorDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_detail);
         getSupportActionBar().hide();
 
+
+
         detailDate = findViewById(R.id.detailDate);
         detailDesc = findViewById(R.id.detailDesc);
         detailTreatment = findViewById(R.id.detailTreatment);
         detailImage = findViewById(R.id.detailImage);
         detailTime = findViewById(R.id.detailTime);
         detailUsername = findViewById(R.id.detail_username);
+        detailLocation = findViewById(R.id.detailLocation);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -51,6 +53,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
             detailDate.setText(bundle.getString("Date"));
             detailTime.setText(bundle.getString("Time"));
             detailUsername.setText(bundle.getString("Username"));
+            detailLocation.setText(bundle.getString("Location"));
 
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
@@ -115,5 +118,20 @@ public class DoctorDetailActivity extends AppCompatActivity {
                 });
             }
         });
+
+        distanceBtn = findViewById(R.id.distance_button);
+        String location = bundle.getString("Location");
+        distanceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext() ,DoctorDistance.class);
+                intent.putExtra("Location", location);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
 }

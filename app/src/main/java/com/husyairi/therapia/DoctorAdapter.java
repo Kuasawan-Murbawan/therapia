@@ -49,7 +49,8 @@ public class DoctorAdapter extends RecyclerView.Adapter<DocViewHolder> {
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Time", dataList.get(holder.getAdapterPosition()).getDataTime());
                 intent.putExtra("Username", dataList.get(holder.getAdapterPosition()).getUsername());
-                // maybe need to put location here
+                intent.putExtra("Location",dataList.get(holder.getAdapterPosition()).getDataLocation());
+
 
                 context.startActivity(intent);
 

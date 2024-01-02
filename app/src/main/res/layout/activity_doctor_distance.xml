@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorDistance">
+
+    <LinearLayout
+        android:id="@+id/locationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="@color/TherapiaGreen"
+        >
+
+        <TextView
+            android:id="@+id/doctorLocationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Location"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/doctorLocation"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="From"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:id="@+id/patientLocationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient's Location"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/patientLocation"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Patient's location"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/locationLayout"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Back"
+            />
+
+        <Button
+            android:id="@+id/showMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show on Map"
+            android:layout_margin="20dp"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
