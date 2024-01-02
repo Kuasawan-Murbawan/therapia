@@ -87,36 +87,6 @@
                 />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/booking_navbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:paddingHorizontal="5dp"
-            >
-
-            <ImageView
-                android:id="@+id/booking_icon_navbar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/booking_icon_navbar"
-                app:tint="@color/black"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Booking"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/booking_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-
-                />
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
