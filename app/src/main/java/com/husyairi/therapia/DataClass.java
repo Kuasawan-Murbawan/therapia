@@ -4,6 +4,8 @@ import android.widget.Spinner;
 
 public class DataClass {
     private String dataTreatmentType;
+
+    private String dataDesc;
     private String dataDate;
     private String dataTime;
     private String dataLocation;
@@ -12,7 +14,9 @@ public class DataClass {
     private String jobAccepted;
     private String username;
 
-    public DataClass(String username, String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime, String jobAccepted) {
+    private String postingDate;
+
+    public DataClass(String username, String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime, String jobAccepted, String postingDate) {
         this.dataTreatmentType = dataTreatmentType;
         this.dataDesc = dataDesc;
         this.dataLocation = dataLocation;
@@ -21,9 +25,10 @@ public class DataClass {
         this.dataTime = dataTime;
         this.jobAccepted = jobAccepted;
         this.username = username;
+        this.postingDate = postingDate;
     }
 
-    private String dataDesc;
+
 
     public String getUsername() { return username;}
 
@@ -57,6 +62,7 @@ public class DataClass {
         return dataTime;
     }
 
+    public String getPostingDate() {return postingDate;}
 
     public DataClass(){
 

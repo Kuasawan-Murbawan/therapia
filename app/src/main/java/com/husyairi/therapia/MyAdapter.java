@@ -41,8 +41,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recTreatment.setText(dataList.get(position).getDataTreatmentType());
         holder.recDate.setText(dataList.get(position).getDataDate());
         holder.recLocation.setText(dataList.get(position).getDataLocation());
-
-
         holder.recCard.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -53,7 +51,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 intent.putExtra("Treatment", dataList.get(holder.getAdapterPosition()).getDataTreatmentType());
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Time", dataList.get(holder.getAdapterPosition()).getDataTime());
-                // maybe need to put location here
+                intent.putExtra("PostingDate",dataList.get(holder.getAdapterPosition()).getPostingDate());
+                intent.putExtra("DoctorName", dataList.get(holder.getAdapterPosition()).getJobAccepted());
 
                 context.startActivity(intent);
             }

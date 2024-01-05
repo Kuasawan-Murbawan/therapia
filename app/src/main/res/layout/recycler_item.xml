@@ -39,19 +39,17 @@
             android:textStyle="bold"/>
 
 
-
         <TextView
             android:id="@+id/recLocation"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/recTreatment"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="Location"
-            android:textAlignment="center"
             android:textColor="#80A28F"
-            android:textSize="19sp"/>
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/recDate"

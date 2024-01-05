@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView detailDesc, detailTreatment, detailTime, detailDate;
+    TextView detailDesc, detailTreatment, detailTime, detailDate, detailPostingDate, detailDoctor;
     ImageView detailImage;
 
     FirebaseUser user;
@@ -30,6 +30,8 @@ public class DetailActivity extends AppCompatActivity {
         detailTreatment = findViewById(R.id.detailTreatment);
         detailImage = findViewById(R.id.detailImage);
         detailTime = findViewById(R.id.detailTime);
+        detailPostingDate = findViewById(R.id.postingDate);
+        detailDoctor = findViewById(R.id.detailDoctor);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -37,6 +39,8 @@ public class DetailActivity extends AppCompatActivity {
             detailTreatment.setText(bundle.getString("Treatment"));
             detailDate.setText(bundle.getString("Date"));
             detailTime.setText(bundle.getString("Time"));
+            detailPostingDate.setText(bundle.getString("PostingDate"));
+            detailDoctor.setText(bundle.getString("DoctorName"));
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
 
         }

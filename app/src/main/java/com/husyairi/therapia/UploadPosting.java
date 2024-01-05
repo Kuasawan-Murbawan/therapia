@@ -34,6 +34,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class UploadPosting extends AppCompatActivity {
@@ -140,14 +142,14 @@ public class UploadPosting extends AppCompatActivity {
 
     }
 
-    public void uploadData(){
+    public void uploadData() {
         String treatment = chooseTreatment.getSelectedItem().toString();
         String desc = uploadDesc.getText().toString();
         String location = uploadLocation.getText().toString();
 
         // For Date & Time
         int day = uploadDate.getDayOfMonth();
-        int month = uploadDate.getMonth()+1;
+        int month = uploadDate.getMonth() + 1;
         int year = uploadDate.getYear();
 
         int hour = uploadTime.getHour();
@@ -159,6 +161,14 @@ public class UploadPosting extends AppCompatActivity {
 
         String jobAccepted = "null";
 
+        LocalDate currentDate = null;
+        String formattedCurrDate = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            currentDate = LocalDate.now();
+            formattedCurrDate = currentDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        }
+
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String sanitizedEmail = user.getEmail().replace('.', ',');
@@ -166,13 +176,13 @@ public class UploadPosting extends AppCompatActivity {
         String username = sanitizedEmail.split("@")[0];
 
 
-        DataClass dataClass = new DataClass(username, treatment, desc, location, imageURL, formattedDate, formattedTime, jobAccepted);
+        DataClass dataClass = new DataClass(username, treatment, desc, location, imageURL, formattedDate, formattedTime, jobAccepted, formattedCurrDate);
 
         FirebaseDatabase.getInstance().getReference(sanitizedEmail).child(treatment)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(UploadPosting.this, "Noice, Saved!", Toast.LENGTH_SHORT).show();
                             finish();
                         }

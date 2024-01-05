@@ -66,7 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#80A28F"
+        android:background="@drawable/upper_rounded"
+        android:backgroundTint="#80A28F"
         android:layout_alignParentBottom="true"
         android:paddingVertical="6dp">
 
