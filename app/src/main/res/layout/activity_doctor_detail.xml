@@ -27,6 +27,32 @@
     android:textStyle="bold"
     />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posting Date: "
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/postingDate"
+            android:text="posting date"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textColor="@color/TherapiaGreen"
+            />
+    </LinearLayout>
+
     <ImageView
         android:layout_width="400dp"
         android:layout_height="200dp"

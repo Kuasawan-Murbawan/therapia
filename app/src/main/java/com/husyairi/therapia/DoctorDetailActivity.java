@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DoctorDetailActivity extends AppCompatActivity {
 
-    TextView detailDesc, detailTreatment, detailTime, detailDate, detailUsername, detailLocation;
+    TextView detailDesc, detailTreatment, detailTime, detailDate, detailUsername, detailLocation, detailPostingDate;
     ImageView detailImage;
 
     Button acceptJob, medHist, distanceBtn;
@@ -45,6 +45,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
         detailTime = findViewById(R.id.detailTime);
         detailUsername = findViewById(R.id.detail_username);
         detailLocation = findViewById(R.id.detailLocation);
+        detailPostingDate = findViewById(R.id.postingDate);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -54,6 +55,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
             detailTime.setText(bundle.getString("Time"));
             detailUsername.setText(bundle.getString("Username"));
             detailLocation.setText(bundle.getString("Location"));
+            detailPostingDate.setText(bundle.getString("Posting Date"));
 
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
