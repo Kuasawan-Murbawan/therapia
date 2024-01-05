@@ -26,14 +26,41 @@
             android:textStyle="bold"
             />
 
-        <EditText
-            android:id="@+id/doctorLocation"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="From"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            />
+            >
+
+            <ImageView
+                android:id="@+id/currentLocButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_my_location_24"
+                app:tint="@color/DoctorYellow"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/doctorLocation"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:hint="From"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                />
+
+            <ImageView
+                android:id="@+id/clearButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/baseline_delete_24"
+                app:tint="@color/black"
+                />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/patientLocationTitle"
@@ -53,6 +80,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:textSize="20sp"
+            android:textAlignment="center"
             />
 
     </LinearLayout>
