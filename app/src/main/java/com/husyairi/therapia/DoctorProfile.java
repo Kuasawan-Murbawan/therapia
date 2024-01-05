@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class DoctorProfile extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView home_icon_navbar;
+    ImageView home_icon_navbar, activity_icon_navbar;
     Button logoutButton;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -51,6 +51,9 @@ public class DoctorProfile extends AppCompatActivity implements View.OnClickList
         home_icon_navbar = findViewById(R.id.home_icon_navbar);
         home_icon_navbar.setOnClickListener(this);
 
+        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar.setOnClickListener(this);
+
     }
 
     @Override
@@ -62,6 +65,11 @@ public class DoctorProfile extends AppCompatActivity implements View.OnClickList
             case R.id.home_icon_navbar:
                 intent = new Intent(this, DoctorHomepage.class);
                 break;
+
+            case R.id.activity_icon_navbar:
+                    intent = new Intent(this, DoctorActivity.class);
+                    break;
+
             default:
                 intent = null;
         }

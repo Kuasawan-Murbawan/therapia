@@ -72,6 +72,7 @@ public class UploadPosting extends AppCompatActivity {
         uploadDate = findViewById(R.id.uploadDate);
         uploadTime = findViewById(R.id.uploadTime);
 
+
         // disable dates before today
         Calendar today = Calendar.getInstance();
         long now = today.getTimeInMillis();

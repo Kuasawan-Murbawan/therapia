@@ -10,11 +10,31 @@
         android:id="@+id/title_doctor_homepage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor Homepage"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Doctor Homepage"
         android:textSize="28sp"
-        android:layout_margin="20dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3B3B3B"
+        android:layout_below="@+id/title_doctor_homepage"/>
+
+    <TextView
+        android:id="@+id/listofPosting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List of Postings"
+        android:layout_below="@+id/title_doctor_homepage"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,17 +43,19 @@
         android:id="@+id/doctor_recyclerView"
         android:scrollbars="vertical"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/title_doctor_homepage"
+        android:layout_below="@+id/listofPosting"
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:background="@color/DoctorYellow"
+        android:background="@drawable/upper_rounded"
+        android:backgroundTint="@color/DoctorYellow"
         android:layout_alignParentBottom="true"
-        android:paddingVertical="6dp">
+        android:paddingVertical="6dp"
+        >
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -47,7 +69,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_icon_navbar"
+                android:src="@drawable/baseline_home_24"
                 app:tint="@color/TherapiaGreen" />
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +95,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/chat_icon_navbar"
+                android:src="@drawable/baseline_chat_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -100,7 +123,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/activity_icon_navbar"
+                android:src="@drawable/baseline_assignment_24"
+                app:tint="@color/black"
+
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -126,7 +151,7 @@
                 android:id="@+id/profile_icon_navbar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/profile_icon_navbar"
+                android:src="@drawable/baseline_person_24"
                 app:tint="@color/black"
                 android:layout_centerHorizontal="true"
                 />

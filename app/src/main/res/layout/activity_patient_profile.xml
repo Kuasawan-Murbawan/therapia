@@ -73,14 +73,13 @@
     </RelativeLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info_layout"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_background"
+        android:layout_centerHorizontal="true"
         android:columnCount="2"
+        android:layout_marginTop="30dp"
         android:rowCount="2">
 
         <RelativeLayout
@@ -137,7 +136,6 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="20dp"
-            android:layout_toRightOf="@+id/height_layout"
             android:background="@drawable/rounded_background">
 
             <ImageView
@@ -178,7 +176,6 @@
             android:layout_row="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            android:layout_below="@+id/height_layout"
             android:layout_margin="20dp"
             android:background="@drawable/rounded_background">
 
@@ -282,11 +279,13 @@
     <LinearLayout
         android:id="@+id/navbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:background="#80A28F"
+        android:background="@drawable/upper_rounded"
+        android:backgroundTint="#80A28F"
         android:layout_alignParentBottom="true"
-        android:paddingVertical="6dp">
+        android:paddingVertical="6dp"
+        >
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -300,7 +299,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_icon_navbar"
+                android:src="@drawable/baseline_home_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -326,7 +326,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/chat_icon_navbar"
+                android:src="@drawable/baseline_chat_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -353,7 +354,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/booking_icon_navbar"
+                android:src="@drawable/baseline_calendar_month_24"
                 app:tint="@color/black"
 
                 />
@@ -382,7 +383,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/activity_icon_navbar"
+                android:src="@drawable/baseline_assignment_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -407,7 +409,7 @@
                 android:id="@+id/profile_icon_navbar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/profile_icon_navbar"
+                android:src="@drawable/baseline_person_24"
                 app:tint="#FFDE59"
                 android:layout_centerHorizontal="true"
                 />

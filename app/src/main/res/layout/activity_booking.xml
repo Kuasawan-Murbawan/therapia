@@ -42,11 +42,13 @@
     <LinearLayout
         android:id="@+id/navbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:background="#80A28F"
+        android:background="@drawable/upper_rounded"
+        android:backgroundTint="#80A28F"
         android:layout_alignParentBottom="true"
-        android:paddingVertical="6dp">
+        android:paddingVertical="6dp"
+        >
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -60,7 +62,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_icon_navbar"
+                android:src="@drawable/baseline_home_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -86,7 +89,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/chat_icon_navbar"
+                android:src="@drawable/baseline_chat_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -101,7 +105,6 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/booking_navbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -114,8 +117,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/booking_icon_navbar"
-                app:tint="#FFDE59"
+                android:src="@drawable/baseline_calendar_month_24"
+                app:tint="@color/DoctorYellow"
 
                 />
             <TextView
@@ -124,7 +127,7 @@
                 android:text="Booking"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/booking_icon_navbar"
-                android:textColor="#FFDE59"
+                android:textColor="@color/DoctorYellow"
                 android:textSize="15sp"
                 android:textStyle="bold"
 
@@ -143,7 +146,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/activity_icon_navbar"
+                android:src="@drawable/baseline_assignment_24"
+                app:tint="@color/black"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -164,12 +168,11 @@
             android:layout_weight="1"
             >
 
-
             <ImageView
                 android:id="@+id/profile_icon_navbar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/profile_icon_navbar"
+                android:src="@drawable/baseline_person_24"
                 app:tint="@color/black"
                 android:layout_centerHorizontal="true"
                 />
@@ -183,8 +186,6 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 />
-
-
         </RelativeLayout>
 
     </LinearLayout>
