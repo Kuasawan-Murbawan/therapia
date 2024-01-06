@@ -157,5 +157,32 @@
         android:background="@drawable/rounded_background"
         />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/TherapiaGreen"
+            />
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:layout_margin="10dp"
+            android:backgroundTint="#D12F2F"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>
 </ScrollView>

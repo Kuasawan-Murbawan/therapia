@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +32,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
 
+    TextView emptyText;
     FirebaseUser user;
     FirebaseAuth auth;
 
@@ -99,6 +101,22 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intent);
             }
         });
+
+        emptyText = findViewById(R.id.emptyText);
+
+        recyclerView.getAdapter().registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onChanged() {
+                super.onChanged();
+
+                if (recyclerView.getAdapter().getItemCount() > 0) {
+                    emptyText.setText(""); // Hide the empty text message
+                } else {
+                    emptyText.setText("Nothing to show.."); // Show the empty text message
+                }
+            }
+        });
+
     }
 
     @Override

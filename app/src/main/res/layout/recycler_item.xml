@@ -35,7 +35,7 @@
             android:layout_marginTop="20dp"
             android:text="Treatment"
             android:textColor="#80A28F"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"/>
 
 
@@ -49,7 +49,9 @@
             android:layout_marginTop="20dp"
             android:text="Location"
             android:textColor="#80A28F"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:textAlignment="center"
+            />
 
         <TextView
             android:id="@+id/recDate"
