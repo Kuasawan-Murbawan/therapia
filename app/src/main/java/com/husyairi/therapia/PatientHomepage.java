@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +32,7 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_patient_homepage);
         getSupportActionBar().hide();
 
+        checkAuthorization();
 
         profile_icon_navbar = findViewById(R.id.profile_layout);
         profile_icon_navbar.setOnClickListener(this);
@@ -69,6 +71,21 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
         chat_qa_layout = findViewById(R.id.chat_qa_layout);
         chat_qa_layout.setOnClickListener(this);
 
+
+    }
+
+    private void checkAuthorization() {
+
+        String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        // Allow access only for specified users
+        if ("doctor1@doctor.com".equals(currentUserEmail) || "doctor2@doctor.com".equals(currentUserEmail)) {
+
+            // Redirect to an appropriate activity or display a message
+            Toast.makeText(PatientHomepage.this, "Please register!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Landing.class));
+            finish();
+            return;
+        }
 
     }
 

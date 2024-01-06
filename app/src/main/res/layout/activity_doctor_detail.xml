@@ -208,5 +208,27 @@
         android:layout_gravity="center"
         />
 
+    <Button
+        android:id="@+id/completeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Session Complete"
+        android:layout_margin="10dp"
+        android:backgroundTint="#8BC34A"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/generateReportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Report"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FFEB3B"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        />
+
 </LinearLayout>
 </ScrollView>

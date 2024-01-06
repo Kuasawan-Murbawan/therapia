@@ -39,6 +39,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DocViewHolder> {
         holder.recDate.setText(dataList.get(position).getDataDate());
         holder.recLocation.setText(dataList.get(position).getDataLocation());
 
+
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +52,8 @@ public class DoctorAdapter extends RecyclerView.Adapter<DocViewHolder> {
                 intent.putExtra("Username", dataList.get(holder.getAdapterPosition()).getUsername());
                 intent.putExtra("Location",dataList.get(holder.getAdapterPosition()).getDataLocation());
                 intent.putExtra("Posting Date", dataList.get(holder.getAdapterPosition()).getPostingDate());
-
+                intent.putExtra("hasAccept", dataList.get(holder.getAdapterPosition()).getJobAccepted());
+                intent.putExtra("hasComplete", dataList.get(holder.getAdapterPosition()).getHasComplete());
                 context.startActivity(intent);
 
             }

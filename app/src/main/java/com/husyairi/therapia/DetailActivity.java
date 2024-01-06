@@ -29,13 +29,16 @@ public class DetailActivity extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
 
-    Button editBtn, deleteBtn;
+    Button editBtn, deleteBtn, reportBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         getSupportActionBar().hide();
+
+        reportBtn = findViewById(R.id.reportButton);
+        reportBtn.setVisibility(View.INVISIBLE);
 
         detailDate = findViewById(R.id.detailDate);
         detailDesc = findViewById(R.id.detailDesc);
@@ -44,9 +47,19 @@ public class DetailActivity extends AppCompatActivity {
         detailTime = findViewById(R.id.detailTime);
         detailPostingDate = findViewById(R.id.postingDate);
         detailDoctor = findViewById(R.id.detailDoctor);
+        deleteBtn = findViewById(R.id.deleteBtn);
+        editBtn = findViewById(R.id.editBtn);
+
 
         Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
+
+        if (bundle.getBoolean("hasComplete")) {
+            editBtn.setVisibility(View.GONE);
+            deleteBtn.setVisibility(View.GONE);
+            reportBtn.setVisibility(View.VISIBLE);
+        }
+
+        if (bundle != null) {
             detailDesc.setText(bundle.getString("Description"));
             detailTreatment.setText(bundle.getString("Treatment"));
             detailDate.setText(bundle.getString("Date"));
@@ -62,7 +75,6 @@ public class DetailActivity extends AppCompatActivity {
         String sanitizedEmail = user.getEmail().replace('.', ',');
         String treatment = bundle.getString("Treatment");
 
-        deleteBtn = findViewById(R.id.deleteBtn);
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,21 +82,24 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+
+
         String doctorName = detailDoctor.getText().toString();
 
         detailDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( doctorName.equals("null")){
+                if (doctorName.equals("null")) {
                     Toast.makeText(DetailActivity.this, "Wating for a doctor..", Toast.LENGTH_SHORT).show();
-                }else {
-                    Intent intent= new Intent(getApplicationContext(), DoctorReference.class);
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), DoctorReference.class);
                     intent.putExtra("Doctor", doctorName);
                     startActivity(intent);
                     finish();
                 }
             }
         });
+
 
 
     }

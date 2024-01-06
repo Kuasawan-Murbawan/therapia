@@ -30,9 +30,10 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
 
     RelativeLayout homepage_icon_navbar, profile_icon_navbar, activity_icon_navbar;
 
-    RecyclerView doc_recview_upcoming;
+    RecyclerView doc_recview_upcoming, recview_history;
 
     List<DataClass> dataListUpcoming = new ArrayList<>();
+    List<DataClass> dataListHistory = new ArrayList<>();
 
     DatabaseReference databaseReference;
 
@@ -73,28 +74,46 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
         DoctorAdapter adapterUpcoming = new DoctorAdapter(DoctorActivity.this, dataListUpcoming);
         doc_recview_upcoming.setAdapter(adapterUpcoming);
 
-        List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com");
+        GridLayoutManager gridLayoutManagerHistory = new GridLayoutManager(DoctorActivity.this, 1);
+        recview_history = findViewById(R.id.recview_history);
+        recview_history.setLayoutManager(gridLayoutManagerHistory);
+        DoctorAdapter adapterHistory = new DoctorAdapter(DoctorActivity.this, dataListHistory);
+        recview_history.setAdapter(adapterHistory);
+
+        List<String> userEmails = Arrays.asList("user1@patient,com", "user2@patient,com");
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference(); // Add this line to initialize databaseReference
-        dataListUpcoming.clear();
         dialog.show();
 
+        dataListUpcoming.clear();
+        dataListHistory.clear();
+        adapterUpcoming.notifyDataSetChanged();
+        adapterHistory.notifyDataSetChanged();
+
         for (String userEmail : userEmails) {
-            String sanitizedEmail = userEmail.replace('.', ',');
-            DatabaseReference databaseReference = firebaseDatabase.getReference(sanitizedEmail);
+            DatabaseReference databaseReference = firebaseDatabase.getReference(userEmail);
             dialog.show();
 
             ValueEventListener eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                public void onDataChange(@NonNull DataSnapshot snapshot)
+                {
+
                     for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                         DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                        if (doctorEmail.equals(dataClass.getJobAccepted())) {
-                            dataListUpcoming.add(dataClass);
+                        if (doctorEmail.equals(dataClass.getJobAccepted())){
+                            if (dataClass.getHasComplete()==false) { // Filter for accepted jobs
+                                dataListUpcoming.add(dataClass);
+                            } else if (dataClass.getHasComplete()) {
+                                dataListHistory.add(dataClass);
+                            } else {
+                                Log.i("null", "This jobAccepted is null");
+                            }
                         }
                     }
                     adapterUpcoming.notifyDataSetChanged();
+                    adapterHistory.notifyDataSetChanged();
                     dialog.dismiss();
                 }
 
@@ -104,6 +123,9 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
                 }
             });
         }
+
+        adapterUpcoming.notifyDataSetChanged();
+        adapterHistory.notifyDataSetChanged();
 
     }
 

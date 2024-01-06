@@ -169,15 +169,15 @@ public class UploadPosting extends AppCompatActivity {
             formattedCurrDate = currentDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
         }
 
-
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String sanitizedEmail = user.getEmail().replace('.', ',');
 
         String username = sanitizedEmail.split("@")[0];
 
+        Boolean hasComplete = false;
 
-        DataClass dataClass = new DataClass(username, treatment, desc, location, imageURL, formattedDate, formattedTime, jobAccepted, formattedCurrDate);
+        DataClass dataClass = new DataClass(username, treatment, desc, location, imageURL, formattedDate, formattedTime, jobAccepted, formattedCurrDate, hasComplete);
 
         FirebaseDatabase.getInstance().getReference(sanitizedEmail).child(treatment)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -184,5 +184,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/reportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Report"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FFEB3B"
+        android:textColor="@color/black"
+        />
+
 </LinearLayout>
 </ScrollView>

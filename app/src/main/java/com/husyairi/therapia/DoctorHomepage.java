@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,6 +46,8 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_doctor_homepage);
         getSupportActionBar().hide();
 
+        checkAuthorization();
+
         profile_icon_navbar = findViewById(R.id.profile_layout);
         profile_icon_navbar.setOnClickListener(this);
 
@@ -70,6 +73,7 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
 
         DoctorAdapter docadapter = new DoctorAdapter(DoctorHomepage.this, dataList);
         docRecyclerView.setAdapter(docadapter);
+        docadapter.notifyDataSetChanged();
 
         List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com");
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -99,6 +103,26 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
                     // Handle database error here
                 }
             });
+        }
+    }
+
+    private void checkAuthorization() {
+        // Get current user's email
+          String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+//        String[] emailParts = currentUserEmail.split("@");
+//        String username = emailParts[1];
+//
+//        String[] usernameParts = username.split(".");
+//        String userType = usernameParts[0];
+
+        // Allow access only for specified users
+        if ("user1@patient.com".equals(currentUserEmail) || "user2@patient.com".equals(currentUserEmail)) {
+
+            // Redirect to an appropriate activity or display a message
+            Toast.makeText(DoctorHomepage.this, "You are not a doctor!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Landing.class));
+            finish();
+            return;
         }
     }
 

@@ -26,9 +26,10 @@ import java.util.List;
 public class PatientActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView home_icon_navbar, profile_icon_navbar, booking_icon_navbar;
-    RecyclerView recview_upcoming;
+    RecyclerView recview_upcoming, recview_history;
 
-    List<DataClass> dataListUpcom = new ArrayList<>();
+    List<DataClass> upcomingAppointments = new ArrayList<>();
+    List<DataClass> historyAppointments = new ArrayList<>();
 
     DatabaseReference databaseReference;
 
@@ -52,9 +53,9 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
         booking_icon_navbar = findViewById(R.id.booking_icon_navbar);
         booking_icon_navbar.setOnClickListener(this);
 
-        GridLayoutManager gridLayoutManagerUpcom = new GridLayoutManager(PatientActivity.this, 1);
+        GridLayoutManager gridLayoutManagerUpcoming = new GridLayoutManager(PatientActivity.this, 1);
         recview_upcoming = findViewById(R.id.recview_upcoming);
-        recview_upcoming.setLayoutManager(gridLayoutManagerUpcom);
+        recview_upcoming.setLayoutManager(gridLayoutManagerUpcoming);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(PatientActivity.this);
         builder.setCancelable(false);
@@ -66,26 +67,35 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
         user = auth.getCurrentUser();
         String sanitizedEmail = user.getEmail().replace('.', ',');
 
-        MyAdapter adapterUpcoming = new MyAdapter(PatientActivity.this, dataListUpcom);
+        MyAdapter adapterUpcoming = new MyAdapter(PatientActivity.this, upcomingAppointments);
         recview_upcoming.setAdapter(adapterUpcoming);
-        //databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
         databaseReference = FirebaseDatabase.getInstance().getReference(sanitizedEmail);
-        dialog.show();
 
+        GridLayoutManager gridLayoutManagerHistory = new GridLayoutManager(PatientActivity.this, 1);
+        recview_history = findViewById(R.id.recview_history);
+        recview_history.setLayoutManager(gridLayoutManagerHistory);
+        MyAdapter adapterHistory = new MyAdapter(PatientActivity.this, historyAppointments);
+        recview_history.setAdapter(adapterHistory);
+
+        dialog.show();
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
-                dataListUpcom.clear();
+                upcomingAppointments.clear();
+                historyAppointments.clear();
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    DataClass dataClassUpcom = itemSnapshot.getValue(DataClass.class);
-                    if ("null".equals(dataClassUpcom.getJobAccepted()) == false) { // Filter for accepted jobs
-                        dataListUpcom.add(dataClassUpcom);
-                    }else {
+                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
+                    if ("null".equals(dataClass.getJobAccepted()) == false && !dataClass.getHasComplete()) { // Filter for accepted jobs
+                        upcomingAppointments.add(dataClass);
+                    } else if (dataClass.getHasComplete()) {
+                        historyAppointments.add(dataClass);
+                    } else {
                         Log.i("null", "This jobAccepted is null");
                     }
                 }
                 adapterUpcoming.notifyDataSetChanged();
+                adapterHistory.notifyDataSetChanged();
                 dialog.dismiss();
             }
 
@@ -94,7 +104,8 @@ public class PatientActivity extends AppCompatActivity implements View.OnClickLi
                 dialog.dismiss();
             }
         });
-    }
+
+        }
 
     @Override
     public void onClick(View view) {

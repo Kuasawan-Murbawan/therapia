@@ -16,7 +16,9 @@ public class DataClass {
 
     private String postingDate;
 
-    public DataClass(String username, String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime, String jobAccepted, String postingDate) {
+    private Boolean hasComplete;
+
+    public DataClass(String username, String dataTreatmentType, String dataDesc, String dataLocation, String dataImage, String dataDate, String dataTime, String jobAccepted, String postingDate, Boolean hasComplete) {
         this.dataTreatmentType = dataTreatmentType;
         this.dataDesc = dataDesc;
         this.dataLocation = dataLocation;
@@ -26,9 +28,16 @@ public class DataClass {
         this.jobAccepted = jobAccepted;
         this.username = username;
         this.postingDate = postingDate;
+        this.hasComplete = hasComplete;
     }
 
+    public Boolean getHasComplete() {
+        return hasComplete;
+    }
 
+    public void setHasComplete(Boolean hasComplete) {
+        this.hasComplete = hasComplete;
+    }
 
     public String getUsername() { return username;}
 

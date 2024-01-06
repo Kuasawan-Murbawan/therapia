@@ -27,6 +27,7 @@
         />
 
     <TextView
+        android:id="@+id/history_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
@@ -35,6 +36,15 @@
         android:layout_marginTop="16dp"
         android:textStyle="bold"
         android:layout_below="@id/recview_upcoming"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_title"
+        android:id="@+id/recview_history"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
         />
 
     <LinearLayout
