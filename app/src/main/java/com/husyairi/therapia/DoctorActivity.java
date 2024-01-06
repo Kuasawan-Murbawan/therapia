@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class DoctorActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView homepage_icon_navbar, profile_icon_navbar;
+    RelativeLayout homepage_icon_navbar, profile_icon_navbar, activity_icon_navbar;
 
     RecyclerView doc_recview_upcoming;
 
@@ -46,11 +47,14 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_doctor);
         getSupportActionBar().hide();
 
-        homepage_icon_navbar = findViewById(R.id.home_icon_navbar);
+        homepage_icon_navbar = findViewById(R.id.home_layout);
         homepage_icon_navbar.setOnClickListener(this);
 
-        profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
+        profile_icon_navbar = findViewById(R.id.profile_layout);
         profile_icon_navbar.setOnClickListener(this);
+
+        activity_icon_navbar = findViewById(R.id.activity_layout);
+        activity_icon_navbar.setOnClickListener(this);
 
         GridLayoutManager gridLayoutManagerUpcom = new GridLayoutManager(DoctorActivity.this, 1);
         doc_recview_upcoming = findViewById(R.id.doc_recview_upcoming);
@@ -108,13 +112,17 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent;
 
         switch(view.getId()){
-            case R.id.home_icon_navbar:
+            case R.id.home_layout:
                 intent = new Intent(getApplicationContext(), DoctorHomepage.class);
                 break;
 
-            case R.id.profile_icon_navbar:
+            case R.id.profile_layout:
                 intent = new Intent(getApplicationContext(), DoctorProfile.class);
                 break;
+
+            case R.id.activity_layout:
+                    intent = new Intent(getApplicationContext(), DoctorActivity.class);
+                    break;
 
             default:
                 intent = null;

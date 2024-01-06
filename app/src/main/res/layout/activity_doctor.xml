@@ -37,6 +37,7 @@
         android:paddingVertical="6dp">
 
         <RelativeLayout
+            android:id="@+id/home_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -91,6 +92,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/activity_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -119,6 +121,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/profile_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"

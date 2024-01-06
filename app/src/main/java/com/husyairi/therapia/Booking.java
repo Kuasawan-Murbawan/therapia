@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking extends AppCompatActivity implements View.OnClickListener{
-    private ImageView home_icon_navbar, profile_icon_navbar, activity_icon_navbar;
+    private RelativeLayout home_icon_navbar, profile_icon_navbar, activity_icon_navbar;
     RecyclerView recyclerView;
     List<DataClass> dataList = new ArrayList<>();
     DatabaseReference databaseReference;
@@ -40,13 +41,13 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_booking);
         getSupportActionBar().hide();
 
-        home_icon_navbar = findViewById(R.id.home_icon_navbar);
+        home_icon_navbar = findViewById(R.id.home_layout);
         home_icon_navbar.setOnClickListener(this);
 
-        profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
+        profile_icon_navbar = findViewById(R.id.profile_layout);
         profile_icon_navbar.setOnClickListener(this);
 
-        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar = findViewById(R.id.activity_layout);
         activity_icon_navbar.setOnClickListener(this);
 
         fab = findViewById(R.id.addpost);
@@ -106,15 +107,15 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
 
         switch(view.getId()){
 
-            case R.id.home_icon_navbar:
+            case R.id.home_layout:
                 intent = new Intent(this, PatientHomepage.class);
                 break;
 
-            case R.id.profile_icon_navbar:
+            case R.id.profile_layout:
                 intent = new Intent(getApplicationContext(), PatientProfile.class);
                 break;
 
-            case R.id.activity_icon_navbar:
+            case R.id.activity_layout:
                 intent = new Intent(getApplicationContext(), PatientActivity.class);
                 break;
 

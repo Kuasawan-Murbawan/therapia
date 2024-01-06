@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,7 +30,7 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
 
     FirebaseAuth auth;
 
-    ImageView profile_icon_navbar, activity_icon_navbar;
+    RelativeLayout profile_icon_navbar, activity_icon_navbar, home_icon_navbar;
 
     List<DataClass> dataList = new ArrayList<>();
 
@@ -44,11 +45,14 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_doctor_homepage);
         getSupportActionBar().hide();
 
-        profile_icon_navbar = findViewById(R.id.profile_icon_navbar);
+        profile_icon_navbar = findViewById(R.id.profile_layout);
         profile_icon_navbar.setOnClickListener(this);
 
-        activity_icon_navbar = findViewById(R.id.activity_icon_navbar);
+        activity_icon_navbar = findViewById(R.id.activity_layout);
         activity_icon_navbar.setOnClickListener(this);
+
+        home_icon_navbar = findViewById(R.id.home_layout);
+        home_icon_navbar.setOnClickListener(this);
 
         docRecyclerView = findViewById(R.id.doctor_recyclerView);
 
@@ -103,14 +107,17 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         Intent intent;
 
         switch(view.getId()){
-            case R.id.profile_icon_navbar:
+            case R.id.profile_layout:
                 intent = new Intent(this, DoctorProfile.class);
                 break;
 
-            case R.id.activity_icon_navbar:
+            case R.id.activity_layout:
                 intent = new Intent(getApplicationContext(), DoctorActivity.class);
                 break;
 
+            case R.id.home_layout:
+                intent = new Intent(getApplicationContext(), DoctorHomepage.class);
+                break;
 
             default:
                 intent = null;
