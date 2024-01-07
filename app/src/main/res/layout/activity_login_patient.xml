@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCF6DF"
+    android:background="@color/Background"
     tools:context=".LoginPatient">
 
     <ImageView
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Patient Sign In"
             android:textSize="23sp"
-            android:fontFamily="@font/garet_book"
+            android:fontFamily="@font/outfit_light"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             />
@@ -68,7 +68,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:backgroundTint="@color/black"/>
+            android:textColor="@color/white"
+            android:backgroundTint="@color/PrimaryPat"/>
 
     </LinearLayout>
 
@@ -88,14 +89,16 @@
             android:paddingTop="20dp"
             />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/register_here"
-        android:text="@string/register"
-        android:textColor="@color/black"
-        android:padding="20dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/register_here"
+            android:text="@string/register"
+            android:textColor="@color/black"
+            android:paddingTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            />
 
     </LinearLayout>
 

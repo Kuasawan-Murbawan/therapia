@@ -56,7 +56,7 @@ public class PatientHomepage extends AppCompatActivity implements View.OnClickLi
         }
 
         viewPager = findViewById(R.id.imageViewPager);
-        imageAdapter = new ImageCarouselAdapter(this, new int[]{R.drawable.imagepromo1, R.drawable.image3});
+        imageAdapter = new ImageCarouselAdapter(this, new int[]{R.drawable.imagepromo1, R.drawable.imagepromo2});
         viewPager.setAdapter(imageAdapter);
 
         upload_posting_layout = findViewById(R.id.upload_posting_qa_layout);

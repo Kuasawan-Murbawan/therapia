@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PatientProfile"
-    android:background="#EFEFF6">
+    android:background="@color/Background">
 
     <RelativeLayout
         android:id="@+id/header_layout"
@@ -33,19 +33,30 @@
         android:background="#3B3B3B"
         android:layout_below="@+id/header_layout"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_layout"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
     <RelativeLayout
         android:id="@+id/info_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/profile_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/user_profile_icon"
+            android:src="@drawable/profile_pic_old"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"/>
         <TextView
@@ -73,11 +84,12 @@
     </RelativeLayout>
 
     <GridLayout
+        android:id="@+id/info_grid_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info_layout"
         android:background="@drawable/rounded_background"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:columnCount="2"
         android:layout_marginTop="30dp"
         android:rowCount="2">
@@ -96,35 +108,38 @@
 
             <ImageView
                 android:id="@+id/height_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/height_icon"
-
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/baseline_height_24"
+                app:tint="@color/black"
                 />
 
-            <TextView
-                android:id="@+id/height"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/height_icon"
-                android:text="Height"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
-                />
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/height_icon"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Height"
+                    android:textSize="14sp"
+                    android:textColor="#6C6B6B"
+                    />
 
 
-            <TextView
-                android:id="@+id/user_height"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/height"
-                android:layout_toRightOf="@+id/height_icon"
-                android:text="180cm"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="159cm"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -140,16 +155,25 @@
 
             <ImageView
                 android:id="@+id/weight_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/baseline_scale_24"
+                app:tint="@color/black"
+                android:layout_centerVertical="true"
+                />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/weight_icon" />
-
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/weight_icon"
+                android:gravity="center"
+                >
             <TextView
                 android:id="@+id/weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/weight_icon"
+                android:layout_marginTop="10dp"
                 android:text="Weight"
                 android:textSize="14sp"
                 android:textColor="#6C6B6B"
@@ -159,13 +183,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/weight"
-                android:layout_toRightOf="@+id/weight_icon"
                 android:text="80kg"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 />
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -181,35 +204,39 @@
 
             <ImageView
                 android:id="@+id/bmi_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/bmi_icon" />
-
-            <TextView
-                android:id="@+id/bmi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/bmi_icon"
-                android:text="BMI"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
+                android:src="@drawable/baseline_accessibility_24"
+                app:tint="@color/black"
                 />
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/bmi"
-                android:layout_marginLeft="6dp"
-                android:layout_toRightOf="@+id/bmi_icon"
-                android:text="23"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/bmi_icon"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="BMI"
+                    android:textSize="14sp"
+                    android:textColor="#6C6B6B"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -225,56 +252,95 @@
 
             <ImageView
                 android:id="@+id/blood_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/blood_icon" />
-
-            <TextView
-                android:id="@+id/blood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@+id/blood_icon"
-                android:text="Blood Type"
-                android:textSize="14sp"
-                android:textColor="#6C6B6B"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/baseline_bloodtype_24"
+                app:tint="@color/black"
                 />
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/blood"
-                android:layout_toRightOf="@+id/blood_icon"
-                android:text="O"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/blood_icon"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Blood Type"
+                    android:textSize="14sp"
+                    android:textColor="#6C6B6B"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB+"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
 
         </RelativeLayout>
 
     </GridLayout>
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/medical_history_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/logout_button"
-        android:layout_centerInParent="true"
-        android:text="dafiq@sakit.com"
+        android:text="Medical History"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="10dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_below="@id/info_grid_layout"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/detailMedHist"
+        android:padding="20dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="Low back pain radiating down the right leg to the calf (sciatica) for the past 2 weeks ..."
+        android:layout_below="@+id/medical_history_title"
+        android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+        android:textSize="15sp"
+        android:textColor="@color/TherapiaGreen"
+        android:background="@drawable/rounded_background"
+        android:fontFamily="@font/poppins_medium"
+        />
+
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/logout_button"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="dafiq@sakit.com"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
     <Button
         android:id="@+id/logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/navbar_layout"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:layout_marginBottom="30dp"
         android:text="Logout" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/navbar_layout"

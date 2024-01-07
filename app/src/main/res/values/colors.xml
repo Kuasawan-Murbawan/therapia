@@ -12,4 +12,19 @@
     <color name="green">#00ff00</color>
     <color name="TherapiaGreen">#80A28F</color>
     <color name="DoctorYellow">#FBE194</color>
+
+    <!--    Color Collection-->
+    <color name="Background">#F4F4F4</color>
+    <color name="Foreground">#FFFFFF</color>
+    <color name="PrimaryPat">#3d7957</color>
+    <color name="SecondaryPat">#87b276</color>
+    <!--    <color name="AccentPat">#FBE194</color>-->
+    <color name="PrimaryDoc">#F9BA58</color>
+    <color name="SecondaryDoc">#FFD46F</color>
+    <!--    <color name="AccentDoc">#FBE194</color>-->
+    <!--    <color name="Tertiary">#FBE194</color>-->
+    <!--    <color name="Alternate">#FBE194</color>-->
+    <color name="PrimaryText">#403229</color>
+    <color name="SecondaryText">#57636C</color>
+
 </resources>

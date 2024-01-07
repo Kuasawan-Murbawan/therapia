@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E8E5E5">
+    android:background="#5EFBE194">
 
     <TextView
     android:layout_width="wrap_content"
@@ -23,8 +23,9 @@
     android:textSize="28sp"
     android:layout_gravity="center"
     android:layout_marginBottom="12dp"
-    android:textColor="@color/TherapiaGreen"
+    android:textColor="@color/black"
     android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
     />
 
     <LinearLayout
@@ -71,6 +72,7 @@
         android:text="Description"
         android:layout_marginLeft="20dp"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -84,6 +86,7 @@
         android:textSize="18sp"
         android:textColor="@color/TherapiaGreen"
         android:background="@drawable/rounded_background"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -92,6 +95,7 @@
         android:text="Location"
         android:layout_marginLeft="20dp"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -105,6 +109,7 @@
         android:textSize="18sp"
         android:textColor="@color/TherapiaGreen"
         android:background="@drawable/rounded_background"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -113,6 +118,7 @@
         android:text="Date"
         android:layout_marginLeft="20dp"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -126,7 +132,7 @@
         android:textSize="18sp"
         android:textColor="@color/TherapiaGreen"
         android:background="@drawable/rounded_background"
-
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -135,6 +141,7 @@
         android:text="Time"
         android:layout_marginLeft="20dp"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -148,6 +155,7 @@
         android:textSize="18sp"
         android:textColor="@color/TherapiaGreen"
         android:background="@drawable/rounded_background"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -156,6 +164,7 @@
         android:text="Patient Name"
         android:layout_marginLeft="20dp"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <TextView
@@ -168,7 +177,9 @@
         android:padding="20dp"
         android:text="Patient"
         android:textColor="@color/TherapiaGreen"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
