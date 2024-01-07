@@ -27,108 +27,108 @@
         android:layout_marginTop="10dp"
         android:paddingBottom="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/medical_history_title"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="20dp"
-        >
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Demographic"
-            android:layout_marginLeft="20dp"
-            android:layout_marginVertical="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/detailDemographic"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/demographic_details"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/TherapiaGreen"
-            android:background="@drawable/rounded_background"
-            android:padding="10dp"
-            />
+            android:orientation="vertical"
+            android:layout_below="@+id/medical_history_title"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="20dp"
+            >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Complaint"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
 
-        <TextView
-            android:id="@+id/complaintDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/rounded_background"
-            android:text="@string/complaint_details"
-            android:textColor="@color/TherapiaGreen"
-            android:textSize="18sp"
-            android:padding="10dp"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Demographic"
+                android:layout_marginLeft="20dp"
+                android:layout_marginVertical="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medical History"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailDemographic"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/demographic_details"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/TherapiaGreen"
+                android:background="@drawable/rounded_background"
+                android:padding="20dp"
+                />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/medical_history_details"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/TherapiaGreen"
-            android:background="@drawable/rounded_background"
-            android:padding="10dp"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complaint"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Goal for Treatment"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            <TextView
+                android:id="@+id/complaintDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/rounded_background"
+                android:text="@string/complaint_details"
+                android:textColor="@color/TherapiaGreen"
+                android:textSize="15sp"
+                android:padding="20dp"
+                />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/goalDetails"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/goal_details"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/TherapiaGreen"
-            android:background="@drawable/rounded_background"
-            android:padding="10dp"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medical History"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/medical_history_details"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/TherapiaGreen"
+                android:background="@drawable/rounded_background"
+                android:padding="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goal for Treatment"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/goalDetails"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/goal_details"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/TherapiaGreen"
+                android:background="@drawable/rounded_background"
+                android:padding="20dp"
+                />
+
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

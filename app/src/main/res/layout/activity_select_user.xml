@@ -4,33 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Background"
     tools:context=".SelectUser">
+
+    <ImageView
+        android:id="@+id/therapia_logo"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/therapia_logo"
+        />
+
+
+    <TextView
+        android:id="@+id/therapia_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Therapia"
+        android:layout_below="@+id/therapia_logo"
+        android:textSize="35dp"
+        android:fontFamily="@font/belleza"
+        android:paddingTop="0dp"
+        android:textColor="#403229"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true"
+        android:layout_below="@+id/therapia_text"
+        android:layout_marginTop="70dp"
         >
 
-    <Button
-        android:id="@+id/patient"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Patient"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/TherapiaGreen"
-        android:textSize="16sp"
-        />
+        <Button
+            android:id="@+id/patient"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Patient"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/PrimaryPat"
+            android:textSize="16sp"
+            />
 
-    <Button
-        android:id="@+id/doctor"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Doctor"
-        android:textSize="16sp"
-        android:backgroundTint="@color/DoctorYellow"
-        android:textColor="@color/black"
-        />
+        <Button
+            android:id="@+id/doctor"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Doctor"
+            android:textSize="16sp"
+            android:backgroundTint="@color/PrimaryDoc"
+            android:textColor="@color/white"
+            />
     </LinearLayout>
 </RelativeLayout>

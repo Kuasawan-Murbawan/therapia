@@ -4,18 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoctorActivity"
-    android:background="@color/Background">
+    android:background="@color/Background"
+    tools:context=".DoctorActivity">
 
     <TextView
+        android:id="@+id/top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activities"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:paddingTop="17dp"
+        android:paddingBottom="13dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@color/PrimaryDoc"
+        />
+
+    <TextView
+        android:layout_below="@id/top_title"
+        android:id="@+id/upcoming_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Activity"
-        android:textSize="29sp"
+        android:text="Upcoming Appointments"
+        android:textSize="23sp"
+        android:textColor="@color/PrimaryText"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/upcoming_act"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +41,8 @@
         android:layout_below="@id/upcoming_act"
         android:id="@+id/doc_recview_upcoming"
         android:scrollbars="vertical"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
         />
 
     <TextView
@@ -32,10 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
-        android:layout_centerHorizontal="true"
-        android:textSize="29dp"
-        android:layout_marginTop="16dp"
+        android:textSize="23sp"
+        android:textColor="@color/PrimaryText"
         android:textStyle="bold"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/doc_recview_upcoming"
         />
 
@@ -45,18 +64,22 @@
         android:layout_below="@id/history_title"
         android:id="@+id/recview_history"
         android:scrollbars="vertical"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_background"
+        android:layout_marginHorizontal="10dp"
         />
 
-
+    <!--NAVBAR-->
     <LinearLayout
+        android:id="@+id/doctor_navbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="@drawable/upper_rounded"
-        android:backgroundTint="@color/DoctorYellow"
+        android:backgroundTint="@color/white"
         android:layout_alignParentBottom="true"
-        android:paddingVertical="6dp">
+        android:paddingVertical="6dp"
+        >
 
         <RelativeLayout
             android:id="@+id/home_layout"
@@ -68,24 +91,16 @@
 
             <ImageView
                 android:id="@+id/home_icon_navbar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="41dp"
+                android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_home_24"
-                app:tint="@color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/home_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                app:tint="@color/SecondaryText" />
+
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/chat_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -94,24 +109,14 @@
 
             <ImageView
                 android:id="@+id/chat_icon_navbar"
-                android:layout_width="40dp"
+                android:layout_width="33dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_chat_24"
-                app:tint="@color/black"
+                app:tint="@color/SecondaryText"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/chat_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
-        </RelativeLayout>
 
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/activity_layout"
@@ -123,23 +128,13 @@
 
             <ImageView
                 android:id="@+id/activity_icon_navbar"
-                android:layout_width="40dp"
+                android:layout_width="33dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_assignment_24"
-                app:tint="@color/TherapiaGreen"
+                app:tint="@color/PrimaryDoc"
+                />
 
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Activity"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/activity_icon_navbar"
-                android:textColor="@color/TherapiaGreen"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
         </RelativeLayout>
 
         <RelativeLayout
@@ -156,19 +151,10 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/baseline_person_24"
-                app:tint="@color/black"
+                app:tint="@color/SecondaryText"
                 android:layout_centerHorizontal="true"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/profile_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+
 
 
         </RelativeLayout>

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +41,8 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
     ValueEventListener eventListener;
     FirebaseUser user;
 
+    TextView username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,8 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         home_icon_navbar = findViewById(R.id.home_layout);
         home_icon_navbar.setOnClickListener(this);
 
+        username = findViewById(R.id.username);
+
         docRecyclerView = findViewById(R.id.doctor_recyclerView);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(DoctorHomepage.this, 1);
@@ -71,11 +76,19 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
+        if(user == null){
+            Intent intent = new Intent(getApplicationContext(), LoginPatient.class);
+            startActivity(intent);
+            finish();
+        }else{
+            username.setText(user.getEmail().split("@")[0]);
+        }
+
         DoctorAdapter docadapter = new DoctorAdapter(DoctorHomepage.this, dataList);
         docRecyclerView.setAdapter(docadapter);
         docadapter.notifyDataSetChanged();
 
-        List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com");
+        List<String> userEmails = Arrays.asList("user1@patient.com", "user2@patient.com", "user3@patient.com");
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
         dataList.clear();
@@ -109,14 +122,8 @@ public class DoctorHomepage extends AppCompatActivity implements View.OnClickLis
     private void checkAuthorization() {
         // Get current user's email
           String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-//        String[] emailParts = currentUserEmail.split("@");
-//        String username = emailParts[1];
-//
-//        String[] usernameParts = username.split(".");
-//        String userType = usernameParts[0];
 
-        // Allow access only for specified users
-        if ("user1@patient.com".equals(currentUserEmail) || "user2@patient.com".equals(currentUserEmail)) {
+        if ("user1@patient.com".equals(currentUserEmail) || "user2@patient.com".equals(currentUserEmail) || "user3@patient.com".equals(currentUserEmail)) {
 
             // Redirect to an appropriate activity or display a message
             Toast.makeText(DoctorHomepage.this, "You are not a doctor!", Toast.LENGTH_SHORT).show();

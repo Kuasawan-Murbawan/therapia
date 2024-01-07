@@ -79,7 +79,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener{
                 dataList.clear();
                 for(DataSnapshot itemSnapshot: snapshot.getChildren()){
                     DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                    if ("null".equals(dataClass.getJobAccepted())) {
+                    if ("null".equals(dataClass.getJobAccepted()) && !dataClass.getHasComplete() ) {
                         dataList.add(dataClass);
                     }
                 }

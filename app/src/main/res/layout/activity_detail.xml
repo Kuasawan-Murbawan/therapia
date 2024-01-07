@@ -10,199 +10,190 @@
     android:orientation="vertical"
     >
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#5480A28F"
-    android:paddingBottom="30dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailTreatment"
-        android:layout_marginTop="14dp"
-        android:text="Treatment"
-        android:textSize="28sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="12dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_medium"
-        />
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Posting Date: "
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textSize="18sp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/postingDate"
-        android:text="posting date"
-        android:textSize="18sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textColor="@color/TherapiaGreen"
-
-        />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:id="@+id/detailImage"
-        android:padding="8dp"
-        android:layout_gravity="center"
-        android:src="@drawable/baseline_upload_24"
-        android:scaleType="fitCenter"
-        android:background="@drawable/rounded_background"
-        android:layout_margin="8dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailDesc"
-        android:padding="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:text="Description"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/TherapiaGreen"
-        android:background="@drawable/rounded_background"
-        android:fontFamily="@font/poppins_medium"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/Background"
+        android:paddingBottom="30dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date"
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailDate"
-        android:layout_marginHorizontal="20dp"
-        android:padding="20dp"
-        android:text="Date"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/TherapiaGreen"
-        android:background="@drawable/rounded_background"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailTime"
-        android:layout_marginHorizontal="20dp"
-        android:padding="20dp"
-        android:text="Time"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/TherapiaGreen"
-        android:background="@drawable/rounded_background"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Doctor Assigned"
-        android:layout_marginLeft="20dp"
-        android:layout_marginVertical="10dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailDoctor"
-        android:layout_marginHorizontal="20dp"
-        android:padding="20dp"
-        android:text="pending..."
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/TherapiaGreen"
-        android:background="@drawable/rounded_background"
-        android:fontFamily="@font/poppins_medium"
-        />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
-
-        <Button
-            android:id="@+id/editBtn"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/TherapiaGreen"
+            android:id="@+id/detailTreatment"
+            android:layout_marginTop="14dp"
+            android:text="Treatment"
+            android:textSize="28sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/TherapiaGreen"
+            android:textStyle="bold"
             />
 
-        <Button
-            android:id="@+id/deleteBtn"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posting Date: "
+                android:layout_marginLeft="20dp"
+                android:layout_marginVertical="10dp"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postingDate"
+                android:text="posting date"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/TherapiaGreen"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:id="@+id/detailImage"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/baseline_upload_24"
+            android:scaleType="fitCenter"
+            android:background="@drawable/rounded_background"
+            android:layout_margin="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailDesc"
+            android:padding="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Description"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/TherapiaGreen"
+            android:background="@drawable/rounded_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailDate"
+            android:layout_marginHorizontal="20dp"
+            android:padding="20dp"
+            android:text="Date"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/TherapiaGreen"
+            android:background="@drawable/rounded_background"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailTime"
+            android:layout_marginHorizontal="20dp"
+            android:padding="20dp"
+            android:text="Time"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/TherapiaGreen"
+            android:background="@drawable/rounded_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Assigned"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailDoctor"
+            android:layout_marginHorizontal="20dp"
+            android:padding="20dp"
+            android:text="pending..."
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/TherapiaGreen"
+            android:background="@drawable/rounded_background"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+            <Button
+                android:id="@+id/editBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/PrimaryPat"
+                />
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D12F2F"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reportButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Report"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:backgroundTint="#D12F2F"
+            android:backgroundTint="@color/SecondaryText"
+            android:textColor="@color/white"
             />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/reportButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show Report"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:backgroundTint="#FFEB3B"
-        android:textColor="@color/black"
-        />
-
-</LinearLayout>
 </ScrollView>

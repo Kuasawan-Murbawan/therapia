@@ -80,7 +80,7 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
         DoctorAdapter adapterHistory = new DoctorAdapter(DoctorActivity.this, dataListHistory);
         recview_history.setAdapter(adapterHistory);
 
-        List<String> userEmails = Arrays.asList("user1@patient,com", "user2@patient,com");
+        List<String> userEmails = Arrays.asList("user1@patient,com", "user2@patient,com", "user3@patient,com");
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference(); // Add this line to initialize databaseReference

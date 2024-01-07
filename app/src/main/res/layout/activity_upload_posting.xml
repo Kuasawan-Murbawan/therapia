@@ -27,8 +27,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Make Posting"
-                android:textSize="30sp"
+                android:text="Upload Data"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/PrimaryText"
+                android:textSize="23sp"
                 android:textAlignment="center"/>
 
             <ImageView
@@ -49,7 +51,7 @@
                 android:padding="16dp"
                 android:entries="@array/treatment_options"
                 android:prompt="@string/select_treatments_prompt"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/SecondaryText"
                 />
 
             <EditText
@@ -87,8 +89,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="20dp"
                 android:text="Save"
                 android:id="@+id/saveButton"
+                android:backgroundTint="@color/PrimaryPat"
                 android:textSize="18sp"
                 app:cornerRadius = "20dp"/>
 

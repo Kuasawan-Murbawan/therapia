@@ -4,56 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Background"
     tools:context=".DoctorHomepage">
 
-    <TextView
-        android:id="@+id/title_doctor_homepage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Doctor Homepage"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <View
+    <LinearLayout
+        android:id="@+id/greetings_layout"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#3B3B3B"
-        android:layout_below="@+id/title_doctor_homepage"/>
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/PrimaryDoc"
+        android:orientation="vertical"
+        android:elevation="10dp"
+        >
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Welcome,"
+            android:textSize="20sp"
+            android:textColor="@color/PrimaryText"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:textSize="18sp"
+            android:textColor="@color/PrimaryText"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"
+            />
+
+    </LinearLayout>
+
 
     <TextView
+        android:layout_below="@+id/greetings_layout"
         android:id="@+id/listofPosting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="List of Postings"
-        android:layout_below="@+id/title_doctor_homepage"
+        android:textColor="@color/PrimaryText"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/doctor_recyclerView"
         android:scrollbars="vertical"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_below="@+id/listofPosting"
+        android:background="@drawable/rounded_background"
+        android:paddingVertical="15dp"
         />
 
 
+    <!--NAVBAR-->
     <LinearLayout
-        android:id="@+id/navbar_layout"
+        android:id="@+id/doctor_navbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="@drawable/upper_rounded"
-        android:backgroundTint="@color/DoctorYellow"
+        android:backgroundTint="@color/white"
         android:layout_alignParentBottom="true"
         android:paddingVertical="6dp"
         >
@@ -68,21 +91,12 @@
 
             <ImageView
                 android:id="@+id/home_icon_navbar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="41dp"
+                android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_home_24"
-                app:tint="@color/TherapiaGreen" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/home_icon_navbar"
-                android:textColor="@color/TherapiaGreen"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                app:tint="@color/PrimaryDoc" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -95,24 +109,14 @@
 
             <ImageView
                 android:id="@+id/chat_icon_navbar"
-                android:layout_width="40dp"
+                android:layout_width="33dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_chat_24"
-                app:tint="@color/black"
+                app:tint="@color/SecondaryText"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/chat_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
-        </RelativeLayout>
 
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/activity_layout"
@@ -124,23 +128,13 @@
 
             <ImageView
                 android:id="@+id/activity_icon_navbar"
-                android:layout_width="40dp"
+                android:layout_width="33dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/baseline_assignment_24"
-                app:tint="@color/black"
+                app:tint="@color/SecondaryText"
+                />
 
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Activity"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/activity_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
         </RelativeLayout>
 
         <RelativeLayout
@@ -157,19 +151,10 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/baseline_person_24"
-                app:tint="@color/black"
+                app:tint="@color/SecondaryText"
                 android:layout_centerHorizontal="true"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/profile_icon_navbar"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+
 
 
         </RelativeLayout>
